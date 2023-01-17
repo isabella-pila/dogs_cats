@@ -13,7 +13,8 @@ https://docs.djangoproject.com/en/4.1/ref/settings/
 from pathlib import Path
 import os
 from django.contrib.messages import constants
-
+import mimetypes
+mimetypes.add_type("text/css", ".css", True)
 
 # core/settings.py
 
