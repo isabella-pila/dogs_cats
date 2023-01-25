@@ -1,0 +1,477 @@
+@import url('https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Roboto&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Lato:wght@300&display=swap');
+@import url('https://fonts.googleapis.com/css?family=Orbitron');
+/*
+    -------- CSS GERAL --------
+*/
+
+html, body{
+    margin: 0;
+    padding: 0;
+    flex-direction: column;
+    overflow-x: hidden;
+}
+
+.date{
+    color: #000;
+    
+
+}
+
+body, nav, .conteudoSbr, .headerSec, .datas, .conteudProg, #progInd, .tudo, .equipe{
+    display: flex;
+    justify-items: center;
+    justify-content: center;
+    align-items: center;
+}
+
+#titulo{
+    font-family: 'Lato', sans-serif;
+    font-size: 50px;
+    text-align: center;
+    padding-top: 30px;
+}
+
+/*
+    -------- CSS NAV --------
+*/
+.navbar-brand{
+    width: 30px; 
+}
+.logo{
+     width: 30px; 
+    margin-left: 30px;
+}
+
+.navbar, .fixed-top, .navbar-expand-lg, .navbar-light, .bg-light{
+    font-family: 'Bebas Neue', cursive;
+    display: flex;
+    justify-items: center;
+    justify-content: center;
+    align-items: center;
+}
+nav ul{
+    font-size: 20px;
+    display: flex;
+    justify-items: center;
+    justify-content: center;
+    align-items: center;
+}
+nav a{
+    font-size: 20px;
+    padding-left: 10px;
+    color: rgb(0, 0, 0);
+    cursor: pointer;
+}
+nav li{
+    display: inline;
+    margin-right: 20px;
+    position: relative;
+    float: left;
+    list-style-type: none;
+    font-size: 20px;
+}
+
+/*
+    -------- CSS HEADER --------
+*/
+.headerSec {
+    height: 100vh;
+    width: 100%;
+    flex-direction: column;
+    font-family: 'Bebas Neue', cursive;
+    margin: 0;
+}
+
+
+#logotipo{
+    width: 35vh;
+    color: rgb(134, 120, 120);
+    margin-bottom: 4px;
+   
+} 
+#eventoOnline{
+    background-color: #777;
+    color: black;
+    font-family: 'Bebas Neue', cursive;
+    width: 400px;
+    text-align: center;
+    font-size: 32px;
+    margin-bottom: 30px;    
+}
+
+.insc {
+    font-size: 20px;
+}
+.btn, .btn-outline-light{
+   width: 80vh;
+   height: 12vh;
+   display: flex;
+   justify-items: center;
+   justify-content: center;
+   align-items: center;
+}
+
+
+.numero{
+    font-family: 'Orbitron';
+    font-size: 25px;
+    text-align: center;
+    color: white; 
+    text-shadow: black 0.1em 0.1em 0.2em;
+    padding: 1px;
+}
+.subHours{
+    font-size: 25px;
+    text-align: center;
+    color: white; 
+    text-shadow: black 0.1em 0.1em 0.2em;
+    padding: 1px;
+}
+.contagem{
+    border-collapse: collapse;
+    border-spacing: 0;
+}
+.nav-link{
+    font-size: 22px;
+}
+.headerSec p{
+    font-size: 40px;
+    color: white;
+    margin-bottom: 40px;
+}
+.headerSec a{
+    font-size: 30px;
+    
+}
+.headerSec a:hover {
+    color: #c8cee7;
+    opacity: 1;
+}
+
+.header a:link {
+    color: #c8cee7;
+    opacity: 1;
+}
+
+.headerSec a:visited {
+    color: #c8cee7;
+}
+
+.subscribe{
+    font-size: 30px;
+    color: rgb(255, 255, 255); 
+    text-align: center;
+    float: center;
+    position: relative;
+    font-family: 'Bebas Neue', cursive;
+    }
+
+/*
+    -------- CSS SOBRE --------
+*/
+.sobre{
+    width: 90%;
+    font-family: 'Lato', sans-serif;
+    font-size: 22px;
+    display: flex;
+    flex-direction: column;
+    min-height: 85vh;
+    margin-bottom: 25px;
+    text-align: center;
+}
+
+.conteudoSbr{
+    flex-direction: row;
+    align-items: center;
+    flex-wrap: wrap;
+}
+
+#divImg{
+    width: 400px;
+}
+
+#divTxt{
+    width: 600px;
+    text-align: justify;
+    margin: 30px;
+    padding-top: 20px;
+    color: #555;
+}
+
+#img_sobre{
+    width: 400px;
+}
+
+
+/*
+    -------- CSS PROGRAMAÇÃO --------
+*/
+.programacao{
+    background-color: #a3a3a3;
+    width: 100%; 
+    font-family: 'Lato', sans-serif;
+}
+.arredondado{
+    background-color: #a3a3a3;
+    border-top-right-radius: 30%;
+    height: 250px;
+}
+.conteudProg{
+    margin-top: -185px;
+    background-color: #a3a3a3;
+    width: 100vw;
+    color: black;
+    min-height: 100vh;
+    flex-direction: column; 
+    padding-bottom: 35px;
+}
+.datas, .d-grid, .gap-2, .d-md-block{
+    flex-direction: row;
+    margin: 0;
+    width: 75%;
+    margin-top: 30px;
+    margin-bottom: 10px;
+}
+#botao1, #botao2, #botao3, #botao4, #botao5{
+    font-family: 'Bebas Neue', cursive;
+    font-size: 3vh;
+    background-color: #000000;
+    width: 40%;
+    height: 8vh;
+    outline: none;
+}
+#botao1{
+    background-color: #000000;
+    border-top-left-radius: 10px;
+    border-bottom-left-radius: 10px;
+    border: none;
+} 
+#botao2, #botao3, #botao4{
+    border-left: 1px solid rgb(255, 255, 255);
+    border-right: none;
+    border-top: none;
+    border-bottom: none;
+}
+#botao5{
+    border-top-right-radius: 10px;
+    border-bottom-right-radius: 10px;
+    border-left: 1px solid rgb(255, 255, 255);
+    border-right: none;
+    border-top: none;
+    border-bottom: none;
+}  
+#progInd{
+    width: 600px;
+    background-color: #a3a3a3;
+    flex-direction: row;
+}
+#icone{
+    height: 80px;
+}
+#descProg{
+    width: 450px;
+    border-left: 3px solid #000f92;
+    border-top: 2px solid #dfe4ea;
+    border-right: 2px solid #dfe4ea;
+    border-bottom: 2px solid #dfe4ea;
+    background-color: rgba(255, 255, 255, 0.6);
+    padding: 30px;
+    margin-left: 15px;
+    border-top-right-radius: 25px;
+    border-bottom-right-radius: 25px;
+}
+
+#tituloProg{
+    font-size: 20px;
+    font-weight: bolder;
+}
+
+#horario{
+    color: #000f92;
+    font-weight: bolder;
+}
+
+#responsavel{
+    font-weight: bolder;
+    padding-bottom: 15px;
+}
+
+#link-meet{
+    background-color: #000f92;
+    color: rgb(255, 255, 255);
+    text-decoration: none;
+    padding: 10px;
+    font-weight: bolder;
+    border-radius: 10px;
+    font-size: 15px;
+}
+
+#inscrever{
+    text-decoration: none;
+    background-color: #000f92;
+    color: rgb(255, 255, 255);
+    font-family: 'Bebas Neue', cursive;
+    font-size: 25px;
+    padding: 15px;
+    margin-top: 40px;
+}
+
+/*
+    -------- CSS ORGANIZAÇÃO --------
+*/
+.equipe{
+    flex-direction: column;
+    background-color: #a3a3a3;
+    color: white;
+    width: 100%;
+}
+.tudo{
+    flex-direction: row;
+    flex-wrap: wrap;
+    width: 80%;
+    background-color: black;
+}
+
+#membro{
+    position: relative;
+}
+
+.tudo img{
+    width: 250px;
+    margin: 15px 15px 30px 15px;
+    -webkit-filter: grayscale(100%);
+    filter: grayscale(20%);
+}
+
+.tudo span{    
+    position:absolute;
+    bottom:40px;
+    left: 0;
+    transition: .5s ease;
+    text-align: center;
+    opacity:0;    
+    width: 100%;
+    font-size: 18px;
+    font-family: 'Bebas Neue', cursive;
+    background-color: rgba(0,0,0, 0.5);
+}
+.tudo img:hover span{    
+    opacity:1;
+}
+
+
+/*
+    -------- CSS FOOTER --------
+*/
+footer{
+    background-color: #a3a3a3;
+    padding-top: 30px;
+    text-align: center;
+    bottom: -0;
+}
+.primeiradiv{
+    width: 0;
+    height: 0;
+    border-top: 60px solid transparent;
+    border-right: 100vw solid #000000;
+}
+
+.conteudodiv{
+    background-color: #000000;
+    color: white;
+    font-family: 'Bebas Neue', cursive;
+}
+
+footer a{
+    text-decoration: none;
+
+}
+
+footer img{
+    height: 30px;
+    margin: 10px;
+}
+
+.fundo{
+    background-repeat: no-repeat; 
+    background-size: cover;
+    weight:100%;
+    height:30%;
+   }
+
+
+/*
+    -------- CSS TELA MENOR --------
+*/
+@media(max-width: 650px){
+nav{
+    padding-top: 0;
+}
+.aderSec{
+    margin: 20px;
+}
+.headerSec p{
+    font-size: 35px;
+    color: #000; 
+}
+#logotipo{
+    width: 190px;
+}
+.numero{
+    font-size: 25px;
+}
+
+.btn, .btn-outline-light{
+    width: 55vw;
+    height: 12vh;
+    display: flex;
+    justify-items: center;
+    justify-content: center;
+    align-items: center;
+ }
+#img_sobre{
+    width: 80vw;
+    display: flex;
+    justify-items: center;
+    justify-content: center;
+    align-items: center;
+}
+.conteudoSbr{
+    width: 100vw;
+    display: flex;
+    justify-items: center;
+    justify-content: center;
+    align-items: center;
+}
+#divImg{
+    width: 80vw;
+    display: flex;
+    justify-items: center;
+    justify-content: center;
+    align-items: center;
+}
+#divTxt{
+    width: 80vw;
+    display: flex;
+    justify-items: center;
+    justify-content: center;
+    align-items: center;
+}
+#divTxt p{
+    text-align: justify;
+    width: 300vw;
+}
+#conteudProg{
+    width: 100%;
+    background-color: #555;
+}
+#progInd{
+    width: 300px;
+}
+
+#link-meet{
+    font-size: 12px;
+
+}
+}

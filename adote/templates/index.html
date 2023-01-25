@@ -4,51 +4,238 @@
     <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>Cadastro</title>
+    <title>Ado.te</title>
     <base href="{% static '/' %}">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet">
-    <link rel="stylesheet" type="text/css" href="{% static 'usuarios/css/cadastro.css' %}" >
+    <link rel="stylesheet" type="text/css" href="{% static 'adote/css/adote.css' %}" >
 
-    </head>
-    <body>
-
-        <div class="container-fluid">
-            <div class="row">
-                <div class="col-md-5 bg-side">
-                    <div class='header'>
-                        <img src="{% static 'usuarios/img/logo_adote.png' %}" width="9%"><span class="font-logo">ADO.TE</span>
-                    </div>
-
-                    <div class="body-form">
-                        {% if messages %}
-                            <br>
-                            {% for message in messages %}
-                                <div class="alert {{message.tags}}">
-                                    {{message}}
-                                </div>
-                            {% endfor %}
-                        {% endif %}
-                        <h2>BEM VINDO </h2>
-                        <p>Que bom ter você de volta.</p>
-                        <hr>
-                           <button class="btn btn-light"> <a href="{% url 'cadastro'%}" class="link-float">Cadastre-se</a> </button>
-                    </div>
-                </div>
-
-                <div class="col-md-7">
-                    <div class="side-logo">
-                        <img class="logo-margin-top" src="{% static 'usuarios/img/logo_adote.png' %}" width="20%">
-                        <h1>ADO.TE</h1>
-                        <p>Nos ajude a salvar vidas.</p>
-                    </div>
-                </div>
-
-            </div>
-
-
-
-        </div>
-
+   
+     <link rel="shortcut icon" href="img/favicon.ico" type="image / x-icon">
+     <link rel="icon" href="img/favicon.ico" type="image / x-icon">
+     <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
+         integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
+         crossorigin="anonymous"></script>
+     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js"
+         integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49"
+         crossorigin="anonymous"></script>
+    <!-- <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js"
+         integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy"
+         crossorigin="anonymous"></script>-->
+     
+     <script type="text/javascript" src="js/script.js"></script>
+     <!-- CSS only -->
+     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.1/dist/css/bootstrap.min.css" rel="stylesheet"
+         integrity="sha384-F3w7mX95PdgyTmZZMECAngseQB83DfGTowi0iMjiWaeVhAn4FJkqJByhZMI3AhiU" crossorigin="anonymous">
+ </head>
+ 
+ <body>
+     <!-- 
+          ------------------------------------------------
+          --------------------- MENU ---------------------
+          ------------------------------------------------         
+     -->
+     <nav class="navbar fixed-top navbar-expand-lg navbar-light bg-light">
+         <a class="navbar-brand" href="index.html"><img class="d-inline-block align-top" width="40" height="40"
+                 src="{% static 'usuarios/img/logo_adote.png' %}"></a>
+         <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarTogglerDemo01"
+             aria-controls="navbarTogglerDemo01" aria-expanded="true" aria-label="Alterna navegação">
+             <span class="navbar-toggler-icon"></span>
+         </button>
+         <div class="collapse navbar-collapse" id="navbarTogglerDemo01">
+             <ul class="navbar-nav ms-auto mt-2 mt-lg-0">
+                 <li class="nav-item active">
+                     <a class="nav-link" href="{% url 'login'%}">login</a>
+                 </li>
+                 <li class="nav-item active">
+                     <a class="nav-link" href="{% url 'cadastro'%}">cadastro</a>
+                 </li>
+               <!-- <li class="nav-item active">
+                     <a class="nav-link" href="#item-3">Equipe</a>
+                 </li>
+                 --> 
+                <!-- <li class="nav-item active">
+                     <a class="nav-link" href="https://www.even3.com.br/ifmaismais/">Inscrições</a>
+                 </li> -->
+                 <li class="nav-item active">
+                     <a class="nav-link" href="https://pt-br.facebook.com/IFSULDEMINAS/"><img src="img/face.png" class="d-inline-block align-top" width="30"
+                             height="30"></a>
+                 </li>
+                 <li class="nav-item active">
+                     <a class="nav-link" href="https://www.instagram.com/ifsuldeminas/"><img src="img/insta.png" class="d-inline-block align-top" width="30"
+                             height="30"></a>
+                 </li>
+             </ul>
+         </div>
+ 
+     </nav>
+ 
+     <!-- 
+          --------------------------------------------------
+          --------------------- HEADER ---------------------
+          --------------------------------------------------         
+     -->
+     <section class="headerSec"
+         style="background: url('{% static 'adote/img/pets-3715734.jpg' %}'); background-repeat: no-repeat; background-size: cover;  ">
+         <!--<img id="logotipo" class="logotipo" src="{% static 'usuarios/img/logo_adote.png' %}">-->
+         <p class="date">Ado.te</p>
+         <form class="subscribe" onClick="ready();">
+             <button class="btn btn-outline-light" type="submit"><a>Nos ajude a salvar vidas.</a></button>
+         </form> <br><br>
+         <div>
+            <!-- <p class="info"> É Hoje! </p> --> 
+         </div>
+     </section>
+ 
+     <!-- 
+          -------------------------------------------------
+          --------------------- SOBRE ---------------------
+          -------------------------------------------------         
+     -->
+     <div data-spy="scroll" data-target="#navbar-exemplo3" data-offset="0">
+         <div id="item-1"></div><br><br>
+         <section>
+             <h2 id="titulo"> Quem somos</h2>
+             <div class="conteudoSbr">
+                 <div id="divImg">
+                     <img id="img_sobre" src="{% static 'usuarios/img/logo_adote.png' %}">
+                 </div>
+                 <div id="divTxt">
+                     <p> IF++ é um encontro relacionado a tecnologia organizado diretamente por professores e alunos do
+                         IFSULDEMINAS, no qual reúnem minicursos e palestras para compartilhar conhecimentos
+                         e experiências. Acontecerá do 18 a 22 de Outubro, objetivando o incentivo, a curiosidade e a
+                         difusão do conhecimento para a comunidade interna do
+                         campus, assim como para toda a comunidade externa, uma vez que o evento é aberto para qualquer
+                         pessoa que se interesse por tecnologia, eletrônica, informática, robótica e que apoiam a cultura
+                         de
+                         compartilhar conhecimento e que querem complementar a formação profissional e acadêmica na área
+                         da
+                         ciência da computação.
+                     </p>
+                 </div>
+             </div>
+             <div></div><br>
+         </section>
+ 
+         <!-- 
+          -------------------------------------------------------
+          --------------------- PROGRAMAÇÃO ---------------------
+          -------------------------------------------------------         
+         -->
+         <section id="item-2">
+             <div id="foo"> </div>
+             <div class="arredondado"></div>
+             <div class="conteudProg">
+                 <h2 id="titulo"> Programação </h2>
+                 <div class="datas">
+                     <button class="btn btn-dark" id="botao1" onclick="programacao(1)"> 18/10 </button>
+                     <button class="btn btn-dark" id="botao2" onclick="programacao(2)"> 19/10 </button>
+                     <button class="btn btn-dark" id="botao3" onclick="programacao(3)"> 20/10 </button>
+                     <button class="btn btn-dark" id="botao4" onclick="programacao(4)"> 21/10 </button>
+                     <button class="btn btn-dark" id="botao5" onclick="programacao(5)"> 22/10 </button>
+                 </div>
+                 <div id="divProg">
+                     <div id="progInd"> <img src="img/palestra.png" id="icone">
+                         <div id="descProg">
+                             <p id="tituloProg"> Palestra: RSSF - o elo fraco da IoT </p>
+                             <p id="horario"> 19:00 - 20:00 </p>
+                             <p id="responsavel"> Prof. Omar Branquinho</p> <a id="link-meet"
+                                 href="https://drive.google.com/file/d/1rrWHL1v5N5ESUO8xWB2fsSkebVuK1mxz/view?usp=sharing" target="_blank">ASSISTIR GRAVAÇÃO</a>
+                         </div>
+                     </div>
+                     <div id="progInd"> <img src="img/rodadeconversa.png" id="icone">
+                         <div id="descProg">
+                             <p id="tituloProg"> Roda de conversa: Desafios da mulher na área de TI </p>
+                             <p id="horario"> 20:00 - 21:30 </p>
+                             <p id="responsavel"> Grupo meninas digitais, Pyladies, MulherAda.. </p> <a id="link-meet"
+                                 href="https://drive.google.com/file/d/1NbQ_5yUArZzq9kLgloxoUYvz5iv4Rxeb/view?usp=sharing"
+                                 target="_blank">ASSISTIR GRAVAÇÃO</a>
+                         </div>
+                     </div>
+                     <div id="progInd"> <img src="img/minicurso.png" id="icone">
+                         <div id="descProg">
+                             <p id="tituloProg"> Minicurso: Prototipagem com Figma </p>
+                             <p id="horario"> 20:00 - 21:30 </p>
+                             <p id="responsavel"> Matheus Augusto Simões </p> 
+                             <a id="link-meet"
+                                 href="https://drive.google.com/file/d/1qttN8hxgO8ZzWqk0Rjff166Uns6f6ABB/view?usp=sharing"
+                                 target="_blank"> ASSISTIR 1° DIA</a><br><br>
+                                 
+                                 <a id="link-meet"
+                                 href="https://drive.google.com/file/d/1_uVmA36zJLKWOczZq9ebsX1tKwv8BOJo/view?usp=sharing"
+                                 target="_blank"> ASSISTIR 2° DIA </a>
+ 
+                         </div>
+                     </div>
+                     <div id="progInd"> <img src="img/minicurso.png" id="icone">
+                         <div id="descProg">
+                             <p id="tituloProg"> Minicurso: Arduino </p>
+                             <p id="horario"> 20:00 - 21:30 </p>
+                             <p id="responsavel"> Albert Medeiros de Paula </p> <a id="link-meet"
+                                 href="https://drive.google.com/file/d/1I55i--vAxAfPIRiJ92_-X2_xG3H9FDsb/view?usp=sharing"
+                                 target="_blank"> ASSISTIR 1° DIA  </a>
+                                 <br> <br>
+                                 <a id="link-meet"
+                                 href="https://drive.google.com/file/d/1Wihf1hmgkLcrpivz2O6Gpgc1XIZx-eUH/view?usp=sharing"
+                                 target="_blank"> ASSISTIR 2° DIA  </a>
+                         </div>
+                     </div>
+                 </div>
+                 <a id="inscrever" href="#" > INSCRIÇÕES ENCERRADAS </a>
+             </div>
+         </section>
+     </div>
+         <!-- 
+          -------------------------------------------------------
+          --------------------- ORGANIZAÇÃO ---------------------
+          -------------------------------------------------------         
+     <section id="item-3">
+         <h2 id="titulo"> Equipe </h2>
+         <div class="tudo">
+             <div class="membro" id="albertM">
+                 <img src="img/albert.png" onmouseover="MostraTexto('albert')" onMouseOut="TiraTexto('albert')">
+                 <span id="albert"> Albert Medeiros - 6° período </span>
+             </div>
+             <div class="membro" id="brunoM">
+                 <img src="img/bruno.png" onmouseover="MostraTexto('bruno')" onMouseOut="TiraTexto('bruno')">
+                 <span id="bruno"> Bruno Silveira - 8° período </span>
+             </div>
+             <div class="membro" id="marisaM">
+                 <img src="img/marisa.png" onmouseover="MostraTexto('marisa')" onMouseOut="TiraTexto('marisa')">
+                 <span id="marisa"> Marisa Vieira - 8° período </span>
+             </div>
+             <div class="membro" id="amandaM">
+                 <img src="img/amanda.png" onmouseover="MostraTexto('amanda')" onMouseOut="TiraTexto('amanda')">
+                 <span id="amanda"> Amanda Valério - 6° período </span>
+             </div>
+             <div class="membro" id="matheusM">
+                 <img src="img/matheus.png" onmouseover="MostraTexto('matheus')" onMouseOut="TiraTexto('matheus')">
+                 <span id="matheus"> Matheus Simões - 6° período </span>
+             </div>
+             <div class="membro" id="vanessaM">
+                 <img src="img/vanessa.png" onmouseover="MostraTexto('vanessa')" onMouseOut="TiraTexto('vanessa')">
+                 <span id="vanessa"> Vanessa Rodrigues - 8° período </span>
+             </div>
+         </div>
+     </section>
+     </div>
+     -->
+ 
+         <!-- 
+          --------------------------------------------------
+          --------------------- FOOTER ---------------------
+          --------------------------------------------------         
+     -->
+     <footer>
+          <div class="primeiradiv"></div>
+             <div class="conteudodiv">
+                 Isabella Pila Silva / IF++
+             <div class="contatos">
+                     <a href="https://www.linkedin.com/in/everton-pila-silva-84080a167/" target="_blank"> <img src="img/linkedin.png"> </a>
+                     <a href="https://www.linkedin.com/in/marisa-vieira-santos-6664a2173" target="_blank"> <img src="img/linkedin.png"> </a>
+             </div>
+               <p style="color: white; margin: 0;">Agradecimentos a Encomp / Marisa Vieira</p>
+             </div>
+         </footer>
     
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"></script>
     </body>
