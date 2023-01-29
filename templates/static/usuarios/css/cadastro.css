@@ -46,10 +46,10 @@
 }
 @media(max-width: 800px){
 
-.bg-side{
-    height: 10vh;
-    width:100vw;  
+    .bg-side{
+        height: 10vh;
+        width:100vw;  
+        
+    }
     
-}
-
- }
+     }
