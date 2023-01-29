@@ -1,3 +1,4 @@
+
 .bg-side{
     background-color: #D48191;
     color: white;
@@ -43,3 +44,12 @@
     text-align: center;
     margin-top: 60px;    
 }
+@media(max-width: 800px){
+
+.bg-side{
+    height: 10vh;
+    width:100vw;  
+    
+}
+
+ }

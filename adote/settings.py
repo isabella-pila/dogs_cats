@@ -15,6 +15,9 @@ import os
 from django.contrib.messages import constants
 import mimetypes
 mimetypes.add_type("text/css", ".css", True)
+import cloudinary
+import cloudinary.uploader
+import cloudinary.api
 
 # core/settings.py
 
@@ -59,6 +62,7 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
+    'cloudinary',
     'adote',
     'usuarios',
     'divulgar',
@@ -118,6 +122,19 @@ DATABASES = {
    }
 }
 
+#CLOUDINARY = {
+  #  'cloud_name' : 'dtwruiuyw',
+   # 'api_key' : '444163775762753',
+  #  'api_secret': 'P2g-2mzmh88TL37xDTfXYqt7Dcg'
+#}
+
+
+
+cloudinary.config( 
+  cloud_name = "dtwruiuyw", 
+  api_key = "444163775762753", 
+  api_secret = "P2g-2mzmh88TL37xDTfXYqt7Dcg" 
+)
 
 # Password validation
 # https://docs.djangoproject.com/en/4.1/ref/settings/#auth-password-validators

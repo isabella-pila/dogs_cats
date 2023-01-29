@@ -208,18 +208,18 @@ nav li{
     -------- CSS PROGRAMAÇÃO --------
 */
 .programacao{
-    background-color: #a3a3a3;
+    background-color: #69aca6;
     width: 100%; 
     font-family: 'Lato', sans-serif;
 }
 .arredondado{
-    background-color: #a3a3a3;
+    background-color: #69aca6;
     border-top-right-radius: 30%;
     height: 250px;
 }
 .conteudProg{
     margin-top: -185px;
-    background-color: #a3a3a3;
+    background-color: #69aca6;
     width: 100vw;
     color: black;
     min-height: 100vh;
@@ -263,7 +263,7 @@ nav li{
 }  
 #progInd{
     width: 600px;
-    background-color: #a3a3a3;
+    background-color: #69aca6;
     flex-direction: row;
 }
 #icone{
@@ -322,7 +322,7 @@ nav li{
 */
 .equipe{
     flex-direction: column;
-    background-color: #a3a3a3;
+    background-color:#69aca6;
     color: white;
     width: 100%;
 }
@@ -365,7 +365,7 @@ nav li{
     -------- CSS FOOTER --------
 */
 footer{
-    background-color: #a3a3a3;
+    background-color:#69aca6;
     padding-top: 30px;
     text-align: center;
     bottom: -0;
@@ -380,7 +380,7 @@ footer{
 .conteudodiv{
     background-color: #000000;
     color: white;
-    font-family: 'Bebas Neue', cursive;
+    font-family: calibri;
 }
 
 footer a{

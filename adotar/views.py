@@ -9,6 +9,7 @@ from django.contrib.auth.decorators import login_required
 from django.core.mail import send_mail
 from django.http import HttpResponse
 
+@login_required
 def listar_pets(request):
     if request.method == "GET":
         pets = Pet.objects.filter(status='P')
@@ -30,7 +31,7 @@ def listar_pets(request):
 
     return render(request, 'listar_pets.html', {'pets': pets, 'racas': racas, 'cidade': cidade, 'raca_filter': raca_filter})
 
-
+@login_required
 def pedido_adocao(request, id_pet):
     pet = Pet.objects.filter(id=id_pet).filter(status="P")
     if not pet.exists():
@@ -46,6 +47,7 @@ def pedido_adocao(request, id_pet):
     messages.add_message(request, constants.SUCCESS, 'Pedido de adoção realizado, você receberá um e-mail caso ele seja aprovado.')
     return redirect('/adotar')
 
+@login_required
 def processa_pedido_adocao(request, id_pedido):
     status = request.GET.get('status')
     pedido = PedidoAdocao.objects.get(id=id_pedido)

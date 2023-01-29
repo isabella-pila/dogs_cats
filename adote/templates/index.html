@@ -57,13 +57,9 @@
                      <a class="nav-link" href="https://www.even3.com.br/ifmaismais/">Inscrições</a>
                  </li> -->
                  <li class="nav-item active">
-                     <a class="nav-link" href="https://pt-br.facebook.com/IFSULDEMINAS/"><img src="img/face.png" class="d-inline-block align-top" width="30"
-                             height="30"></a>
+                     <a class="nav-link" href="{% url 'sair'%}">Sair</a>
                  </li>
-                 <li class="nav-item active">
-                     <a class="nav-link" href="https://www.instagram.com/ifsuldeminas/"><img src="img/insta.png" class="d-inline-block align-top" width="30"
-                             height="30"></a>
-                 </li>
+                 
              </ul>
          </div>
  
@@ -100,16 +96,7 @@
                      <img id="img_sobre" src="{% static 'usuarios/img/logo_adote.png' %}">
                  </div>
                  <div id="divTxt">
-                     <p> IF++ é um encontro relacionado a tecnologia organizado diretamente por professores e alunos do
-                         IFSULDEMINAS, no qual reúnem minicursos e palestras para compartilhar conhecimentos
-                         e experiências. Acontecerá do 18 a 22 de Outubro, objetivando o incentivo, a curiosidade e a
-                         difusão do conhecimento para a comunidade interna do
-                         campus, assim como para toda a comunidade externa, uma vez que o evento é aberto para qualquer
-                         pessoa que se interesse por tecnologia, eletrônica, informática, robótica e que apoiam a cultura
-                         de
-                         compartilhar conhecimento e que querem complementar a formação profissional e acadêmica na área
-                         da
-                         ciência da computação.
+                     <p>somos um grupo de quatro estudantes com o foco em desenvolver aplicativos voltados aos vários setores digitais, atualmente com o foco em ajudar com os cuidados dos animais de rua ou adoções.
                      </p>
                  </div>
              </div>
@@ -125,64 +112,66 @@
              <div id="foo"> </div>
              <div class="arredondado"></div>
              <div class="conteudProg">
-                 <h2 id="titulo"> Programação </h2>
-                 <div class="datas">
-                     <button class="btn btn-dark" id="botao1" onclick="programacao(1)"> 18/10 </button>
-                     <button class="btn btn-dark" id="botao2" onclick="programacao(2)"> 19/10 </button>
-                     <button class="btn btn-dark" id="botao3" onclick="programacao(3)"> 20/10 </button>
-                     <button class="btn btn-dark" id="botao4" onclick="programacao(4)"> 21/10 </button>
-                     <button class="btn btn-dark" id="botao5" onclick="programacao(5)"> 22/10 </button>
-                 </div>
-                 <div id="divProg">
-                     <div id="progInd"> <img src="img/palestra.png" id="icone">
-                         <div id="descProg">
-                             <p id="tituloProg"> Palestra: RSSF - o elo fraco da IoT </p>
-                             <p id="horario"> 19:00 - 20:00 </p>
-                             <p id="responsavel"> Prof. Omar Branquinho</p> <a id="link-meet"
-                                 href="https://drive.google.com/file/d/1rrWHL1v5N5ESUO8xWB2fsSkebVuK1mxz/view?usp=sharing" target="_blank">ASSISTIR GRAVAÇÃO</a>
-                         </div>
-                     </div>
-                     <div id="progInd"> <img src="img/rodadeconversa.png" id="icone">
-                         <div id="descProg">
-                             <p id="tituloProg"> Roda de conversa: Desafios da mulher na área de TI </p>
-                             <p id="horario"> 20:00 - 21:30 </p>
-                             <p id="responsavel"> Grupo meninas digitais, Pyladies, MulherAda.. </p> <a id="link-meet"
-                                 href="https://drive.google.com/file/d/1NbQ_5yUArZzq9kLgloxoUYvz5iv4Rxeb/view?usp=sharing"
-                                 target="_blank">ASSISTIR GRAVAÇÃO</a>
-                         </div>
-                     </div>
-                     <div id="progInd"> <img src="img/minicurso.png" id="icone">
-                         <div id="descProg">
-                             <p id="tituloProg"> Minicurso: Prototipagem com Figma </p>
-                             <p id="horario"> 20:00 - 21:30 </p>
-                             <p id="responsavel"> Matheus Augusto Simões </p> 
-                             <a id="link-meet"
-                                 href="https://drive.google.com/file/d/1qttN8hxgO8ZzWqk0Rjff166Uns6f6ABB/view?usp=sharing"
-                                 target="_blank"> ASSISTIR 1° DIA</a><br><br>
-                                 
-                                 <a id="link-meet"
-                                 href="https://drive.google.com/file/d/1_uVmA36zJLKWOczZq9ebsX1tKwv8BOJo/view?usp=sharing"
-                                 target="_blank"> ASSISTIR 2° DIA </a>
- 
-                         </div>
-                     </div>
-                     <div id="progInd"> <img src="img/minicurso.png" id="icone">
-                         <div id="descProg">
-                             <p id="tituloProg"> Minicurso: Arduino </p>
-                             <p id="horario"> 20:00 - 21:30 </p>
-                             <p id="responsavel"> Albert Medeiros de Paula </p> <a id="link-meet"
-                                 href="https://drive.google.com/file/d/1I55i--vAxAfPIRiJ92_-X2_xG3H9FDsb/view?usp=sharing"
-                                 target="_blank"> ASSISTIR 1° DIA  </a>
-                                 <br> <br>
-                                 <a id="link-meet"
-                                 href="https://drive.google.com/file/d/1Wihf1hmgkLcrpivz2O6Gpgc1XIZx-eUH/view?usp=sharing"
-                                 target="_blank"> ASSISTIR 2° DIA  </a>
-                         </div>
-                     </div>
-                 </div>
-                 <a id="inscrever" href="#" > INSCRIÇÕES ENCERRADAS </a>
-             </div>
-         </section>
+                 <h2 id="titulo"> Adoção </h2>
+
+                 <div class="col-md">
+                    <div class="wrapper">
+                        <div class="box width80">
+                            {% if messages %}
+                                <br>
+                                {% for message in messages %}
+                                    <div class="alert {{message.tags}}">
+                                        {{message}}
+                                    </div>
+                                {% endfor %}
+                            {% endif %}       
+                                    
+                                        </select>
+                                    </div>
+                                </div>
+                            </form>
+
+                             <table class="tabela" cellpadding="20">
+                                <tr>
+                                    <th>Foto</th>
+                                    <th>Nome</th>
+                                    <th>Raça</th>
+                                    <th>Status</th>
+                                    <th>Cidade</th>
+                                </tr>
+                                
+                                {% for pet in pets%}
+                                    <tr class="tabela-linha">
+                                        <td width="20%">
+                                           <img width="40%" src="{{pet.foto.url}}"
+                                        </td>
+                                        <td>
+                                            {{pet.nome}}
+                                        </td>
+                                        <td>
+                                            {{pet.raca}}
+                                            
+                                        </td>
+                                        <td>
+                                            {% if pet.status == "P" %}
+                                                <span class="badge text-bg-primary">Para adoção</span>
+                                            {% elif pet.status == "A" %}
+                                                <span class="badge text-bg-success">Adotado</span>
+                                            {% endif%}
+
+                                           
+                                            
+                                        </td>
+                                        <td>
+                                            {{pet.cidade}}
+                                        </td>
+                                    </tr>
+                                {% endfor %}
+                            
+                                
+                            </table>
+                        
+                 
      </div>
          <!-- 
           -------------------------------------------------------
@@ -225,16 +214,16 @@
           --------------------- FOOTER ---------------------
           --------------------------------------------------         
      -->
-     <footer>
+     <footer >
           <div class="primeiradiv"></div>
+         
              <div class="conteudodiv">
-                 Isabella Pila Silva / IF++
+                
+                 Isabella Pila Silva <br> Leonardo Marques <br> Ronald Donizeti <br> Matheus Felipe
              <div class="contatos">
-                     <a href="https://www.linkedin.com/in/everton-pila-silva-84080a167/" target="_blank"> <img src="img/linkedin.png"> </a>
-                     <a href="https://www.linkedin.com/in/marisa-vieira-santos-6664a2173" target="_blank"> <img src="img/linkedin.png"> </a>
-             </div>
-               <p style="color: white; margin: 0;">Agradecimentos a Encomp / Marisa Vieira</p>
-             </div>
+                     <a href="https://instagram.com/apaem_eloi_mendes?igshid=YmMyMTTA2M2Y=" target="_blank"> <img src="{% static 'adote/img/Instagram-Icon.png' %}"> </a>
+                    
+             
          </footer>
     
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"></script>

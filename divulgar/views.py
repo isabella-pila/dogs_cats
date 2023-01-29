@@ -8,6 +8,9 @@ from django.shortcuts import redirect
 from adotar.models import PedidoAdocao
 from django.views.decorators.csrf import csrf_exempt
 
+import cloudinary
+import cloudinary.uploader
+
 
 @login_required
 def novo_pet(request):
@@ -16,6 +19,7 @@ def novo_pet(request):
         racas = Raca.objects.all()
         return render(request, 'novo_pet.html', {'tags': tags, 'racas': racas})
     elif request.method == "POST":
+        #foto = Pet.objects.all()
         foto = request.FILES.get('foto')
         nome = request.POST.get('nome')
         descricao = request.POST.get('descricao')
@@ -24,10 +28,10 @@ def novo_pet(request):
         telefone = request.POST.get('telefone')
         tags = request.POST.getlist('tags')
         raca = request.POST.get('raca')
+    
 
-        #TODO: Validar dados
-
-        pet = Pet(
+    
+    pet = Pet(
             usuario=request.user,
             foto=foto,
             nome=nome,
@@ -38,17 +42,17 @@ def novo_pet(request):
             raca_id=raca,
         )
 
-        pet.save()
+    pet.save()
         
-        for tag_id in tags:
+    for tag_id in tags:
             tag = Tag.objects.get(id=tag_id)
             pet.tags.add(tag)
 
-        pet.save()
+    pet.save()
         #tags = Tag.objects.all()
         #racas = Raca.objects.all()
         #messages.add_message(request, constants.SUCCESS, 'Novo pet cadastrado')
-        return redirect('/divulgar/seus_pets') 
+    return redirect('/divulgar/seus_pets') 
 
 @login_required
 def seus_pets(request):
@@ -77,7 +81,7 @@ def ver_pet(request, id):
 
 
 
-
+@login_required
 def ver_pedido_adocao(request):
     if request.method == "GET":
         pedidos = PedidoAdocao.objects.filter(usuario=request.user).filter(status="AG")
