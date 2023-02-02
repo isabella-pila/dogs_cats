@@ -28,9 +28,8 @@ def novo_pet(request):
         telefone = request.POST.get('telefone')
         tags = request.POST.getlist('tags')
         raca = request.POST.get('raca')
-    
 
-    
+
     pet = Pet(
             usuario=request.user,
             foto=foto,
@@ -83,9 +82,12 @@ def ver_pet(request, id):
 
 @login_required
 def ver_pedido_adocao(request):
-    if request.method == "GET":
-        pedidos = PedidoAdocao.objects.filter(usuario=request.user).filter(status="AG")
-        return render(request, 'ver_pedido_adocao.html', {'pedidos': pedidos})
+    if request.method == "GET"  : 
+            pedidos = PedidoAdocao.objects.filter(usuario=request.user).filter(status="AG")
+            return render(request, 'ver_pedido_adocao.html', {'pedidos': pedidos})
+
+
+    
 
 
 def dashboard(request):
