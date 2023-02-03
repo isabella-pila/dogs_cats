@@ -12,22 +12,28 @@
     <link href="{% static 'adotar/css/listar_pets.css' %}" rel="stylesheet">
     </head>
     <body>
-
+        
         <div class="container-fluid">
             <div class="row">
                 <div class="col-md-2 bg-side sidebar">
                     <h2>ADO.TE</h2>
-                      <table>
-                       <tr>
-                        <td>
-                            <a href="{% url 'divulgar/novo_pet' %}">divulgar</a>
-                        </td>
-
-                       </tr>
-
-
-                      </table>
                     <hr>
+                
+                    <table>
+                        <tr>
+                         <td>
+                             <a style="color:white; font-size: 20px;" href="{% url 'novo_pet'%}">Inserir Pet</a>
+                             <hr>
+                         </td>
+                        </tr>
+                        
+                        <tr>
+                         <td>
+                            <a style="color:white; font-size: 20px; text-align: center;" href="{% url 'ver_pedido_adocao'%}"> Ver Pedido </a>
+                            <hr>
+                        </td>
+                    </tr>
+                       </table>
                     
                     
                 </div>

@@ -35,7 +35,7 @@ def cadastro(request):
 
             messages.add_message(request, constants.SUCCESS,
                                  'Você foi cadastrado com sucesso!')
-            return redirect('/adotar')
+            return redirect('/auth')
         except:
             messages.add_message(request, constants.ERROR, ' ERRO interno!')
             return render(request, 'cadastro.html')
