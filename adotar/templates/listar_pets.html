@@ -22,17 +22,27 @@
                     <table>
                         <tr>
                          <td>
-                             <a style="color:white; font-size: 20px;" href="{% url 'novo_pet'%}">Inserir Pet</a>
-                             <hr>
+                            <a style="color:white; font-size: 20px; text-decoration:none; font-weight:bold;"href="{% url 'novo_pet'%}">Inserir Pet</a>
+                             <br><br>
                          </td>
                         </tr>
                         
+                        
                         <tr>
                          <td>
-                            <a style="color:white; font-size: 20px; text-align: center;" href="{% url 'ver_pedido_adocao'%}"> Ver Pedido </a>
-                            <hr>
+                              <a style="color:white; font-size: 20px; text-decoration:none; font-weight:bold; "href="{% url 'ver_pedido_adocao'%}">Ver Pedido</a>
+                           <br><br>
                         </td>
+                        
                     </tr>
+                    <tr>
+                        <td>
+                             <a style="color:white; font-size: 20px; text-decoration:none; font-weight:bold; "href="{% url 'seus_pets'%}"> seus pets   </a>
+                          <br> <br>
+                       </td>
+                       
+                   </tr>
+                   
                        </table>
                     
                     
@@ -67,6 +77,10 @@
                                             
                                     {% endfor%}
                                         </select>
+                                            
+                                        
+
+
                                     </div>
                                     <div class="col-md-2">
                                         <input type="submit" class="btn-custom-secondary" value="FILTRAR">
@@ -79,8 +93,10 @@
                                     <th>Foto</th>
                                     <th>Nome</th>
                                     <th>Raça</th>
+                                    <th>Sexo</th>
                                     <th>Status</th>
                                     <th>Cidade</th>
+                                    
                                 </tr>
                                 {% for pet in pets%}
                                     <tr class="tabela-linha">
@@ -95,6 +111,10 @@
                                             
                                         </td>
                                         <td>
+                                            {{pet.sexo}}
+                                            
+                                        </td>
+                                        <td>
                                             {% if pet.status == "P" %}
                                                 <span class="badge text-bg-primary">Para adoção</span>
                                             {% elif pet.status == "A" %}
@@ -104,6 +124,7 @@
                                            
                                             
                                         </td>
+                                       
                                         <td>
                                             {{pet.cidade}}
                                         </td>

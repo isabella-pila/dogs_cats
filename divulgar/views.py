@@ -1,6 +1,6 @@
 from django.shortcuts import render
 from django.contrib.auth.decorators import login_required
-from .models import Pet, Tag, Raca
+from .models import Pet, Tag, Raca,Sexo
 from django.contrib import messages
 from django.contrib.messages import constants
 from django.http import HttpResponse, JsonResponse
@@ -17,7 +17,8 @@ def novo_pet(request):
     if request.method == "GET":
         tags = Tag.objects.all()
         racas = Raca.objects.all()
-        return render(request, 'novo_pet.html', {'tags': tags, 'racas': racas})
+        sexos = Sexo.objects.all()
+        return render(request, 'novo_pet.html', {'tags': tags, 'racas': racas, 'sexos':sexos})
     elif request.method == "POST":
         #foto = Pet.objects.all()
         foto = request.FILES.get('foto')
@@ -28,6 +29,8 @@ def novo_pet(request):
         telefone = request.POST.get('telefone')
         tags = request.POST.getlist('tags')
         raca = request.POST.get('raca')
+        sexo = request.POST.get('sexo')
+        
 
 
     pet = Pet(
@@ -39,6 +42,7 @@ def novo_pet(request):
             cidade=cidade,
             telefone=telefone,
             raca_id=raca,
+            sexo_id=sexo,
         )
 
     pet.save()

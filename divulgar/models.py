@@ -9,6 +9,12 @@ class Raca(models.Model):
     def __str__(self):
         return self.raca
 
+class Sexo(models.Model):
+    sexo = models.CharField(max_length=20)
+
+    def __str__(self):
+        return self.sexo
+
 class Tag(models.Model):
     tag = models.CharField(max_length=100)
 
@@ -18,6 +24,7 @@ class Tag(models.Model):
 class Pet(models.Model):
     choices_status =(('P',"Para adoção"),
                      ('A','Adotado'))
+    
     usuario = models.ForeignKey(User,on_delete=models.DO_NOTHING)
     foto = CloudinaryField('foto')
     nome = models.CharField(max_length=100)
@@ -27,11 +34,14 @@ class Pet(models.Model):
     telefone = models.CharField(max_length=15)
     tags = models.ManyToManyField(Tag)
     raca = models.ForeignKey(Raca,on_delete=models.DO_NOTHING)
+    sexo = models.ForeignKey(Sexo,on_delete=models.DO_NOTHING)
     status = models.CharField( max_length=1, choices= choices_status,default='P')
+   
 
     def _str_(self):
         return self.nome
     
+
     
     
 

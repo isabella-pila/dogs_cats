@@ -57,6 +57,7 @@
                                             <span>Cidade:</span>
                                             <input type="text" placeholder="Digite a cidade do pet..." name="cidade" class="form-control">
                                         </div>
+                                        
                                     </div>
                                     <br>
                                     <span>Telefone para contato:</span>
@@ -77,6 +78,15 @@
                                      {% endfor %}
                                        
                                     </select>
+                                </span>Sexo:</span>
+                                    <select name="sexo" class="form-select">
+                                        {% for sexo in sexos%}
+                                           <option value="{{sexo.id}}">{{sexo}}</option>
+                                        {% endfor %}
+                                          
+                                       </select>
+                                    
+                                  
 
                                     <input type="submit" value="ENVIAR" class="btn-custom-primary">
                                 </form>
