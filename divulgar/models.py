@@ -14,12 +14,20 @@ class Sexo(models.Model):
 
     def __str__(self):
         return self.sexo
+    
+class Porte(models.Model):
+    porte = models.CharField(max_length=20)
 
+    def __str__(self):
+        return self.porte
+    
 class Tag(models.Model):
     tag = models.CharField(max_length=100)
 
     def __str__(self):
         return self.tag
+    
+
 
 class Pet(models.Model):
     choices_status =(('P',"Para adoção"),
@@ -35,12 +43,16 @@ class Pet(models.Model):
     tags = models.ManyToManyField(Tag)
     raca = models.ForeignKey(Raca,on_delete=models.DO_NOTHING)
     sexo = models.ForeignKey(Sexo,on_delete=models.DO_NOTHING)
+    porte = models.ForeignKey(Porte,on_delete=models.DO_NOTHING)
     status = models.CharField( max_length=1, choices= choices_status,default='P')
+    
    
 
     def _str_(self):
         return self.nome
     
+
+
 
     
     

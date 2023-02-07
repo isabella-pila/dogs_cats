@@ -86,6 +86,15 @@
                                           
                                        </select>
                                     
+                                       </select>
+                                </span>Porte:</span>
+                                    <select name="porte" class="form-select">
+                                        {% for porte in portes%}
+                                           <option value="{{porte.id}}">{{porte}}</option>
+                                        {% endfor %}
+                                          
+                                       </select>
+                                    
                                   
 
                                     <input type="submit" value="ENVIAR" class="btn-custom-primary">
