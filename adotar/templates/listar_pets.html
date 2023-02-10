@@ -62,8 +62,9 @@
                             <h3 class="font-vinho">Adote</h3>
 
                            <!-- <a href="#"  class="btn btn-outline-primary" role="button" data-bs-toggle="button">Toggle link</a>-->
-                            <hr>
+                            <hr>  
 
+                             
                             <form action="{% url 'listar_pets' %}" method="GET">
                                 <div class="row">
                                     <div class="col-md-6">
@@ -72,11 +73,14 @@
 
                                     <div class="col-md-4">
                                         <select class="form-select" name="raca">
+                                           
                                             {% for raca in racas %}
                                             <option {% if raca_filter.id == raca.id %} selected {% endif %} value="{{raca.id}}">{{raca}}</option>
-                                            
+                                             
                                     {% endfor%}
                                         </select>
+
+                                       
                                             
                                         
 

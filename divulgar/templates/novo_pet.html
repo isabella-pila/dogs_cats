@@ -43,6 +43,15 @@
                                     <span>Nome:<span>
                                     <input type="text" class="form-control" name="nome" placeholder="Digite o nome do pet...">
                                     <br>
+                                </span>Tipo de animal</span>
+                                <select name="animal" class="form-select">
+                                    {% for animal in animals%}
+                                       <option value="{{animal.id}}">{{animal.animal}}</option>
+                                    {% endfor %}
+                                      
+                                   </select>
+                                    <br>
+                                    
                                     <span>Descrição:<span>
                                     <textarea class="form-control" name="descricao" placeholder="Descrição..."></textarea>
                                     <br>
@@ -63,6 +72,8 @@
                                     <span>Telefone para contato:</span>
                                     <input type="text" placeholder="Digite o seu telefone..." name="telefone" class="form-control">
                                     <br>
+                               
+                                    
                                     <span>Tags:</span>
                                     <select name="tags" multiple class="form-select">
                                      {% for tag in tags%}
@@ -78,15 +89,15 @@
                                      {% endfor %}
                                        
                                     </select>
+                                    <br>
                                 </span>Sexo:</span>
                                     <select name="sexo" class="form-select">
                                         {% for sexo in sexos%}
                                            <option value="{{sexo.id}}">{{sexo}}</option>
                                         {% endfor %}
-                                          
-                                       </select>
                                     
                                        </select>
+                                       <br>
                                 </span>Porte:</span>
                                     <select name="porte" class="form-select">
                                         {% for porte in portes%}
@@ -94,7 +105,8 @@
                                         {% endfor %}
                                           
                                        </select>
-                                    
+
+                                  
                                   
 
                                     <input type="submit" value="ENVIAR" class="btn-custom-primary">

@@ -2,16 +2,20 @@ from django.db import models
 from django.contrib.auth.models import User
 from cloudinary.models import CloudinaryField
 
+class Animal(models.Model):
+    animal = models.CharField(max_length=50)
+    def _str_(self):
+        return self.animal
 
 class Raca(models.Model):
     raca = models.CharField(max_length=50)
-
+    animal=models.ForeignKey(Animal,on_delete=models.DO_NOTHING)
     def __str__(self):
         return self.raca
 
+
 class Sexo(models.Model):
     sexo = models.CharField(max_length=20)
-
     def __str__(self):
         return self.sexo
     
@@ -26,7 +30,7 @@ class Tag(models.Model):
 
     def __str__(self):
         return self.tag
-    
+
 
 
 class Pet(models.Model):
@@ -36,6 +40,7 @@ class Pet(models.Model):
     usuario = models.ForeignKey(User,on_delete=models.DO_NOTHING)
     foto = CloudinaryField('foto')
     nome = models.CharField(max_length=100)
+    animal = models.ForeignKey(Animal,on_delete=models.DO_NOTHING)
     descricao = models.TextField()
     estado = models.CharField(max_length=50)
     cidade = models.CharField(max_length=50)

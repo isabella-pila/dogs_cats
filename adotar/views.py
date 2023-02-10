@@ -29,6 +29,8 @@ def listar_pets(request):
 
        raca_filter = Raca.objects.get(id=raca_filter)
 
+    
+
        
 
     return render(request, 'listar_pets.html', {'pets': pets, 'racas': racas, 'cidade': cidade, 'raca_filter': raca_filter})

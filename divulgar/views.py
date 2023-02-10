@@ -1,6 +1,6 @@
 from django.shortcuts import render
 from django.contrib.auth.decorators import login_required
-from .models import Pet, Tag, Raca,Sexo,Porte
+from .models import Pet, Tag, Raca,Sexo,Porte, Animal
 from django.contrib import messages
 from django.contrib.messages import constants
 from django.http import HttpResponse, JsonResponse
@@ -15,15 +15,17 @@ import cloudinary.uploader
 @login_required
 def novo_pet(request):
     if request.method == "GET":
+        animals = Animal.objects.all()
         tags = Tag.objects.all()
         racas = Raca.objects.all()
         sexos = Sexo.objects.all()
         portes = Porte.objects.all()
-        return render(request, 'novo_pet.html', {'tags': tags, 'racas': racas, 'sexos':sexos, 'portes':portes })
+        
+        return render(request, 'novo_pet.html', { 'animals':animals, 'tags': tags, 'racas': racas, 'sexos':sexos, 'portes':portes })
     elif request.method == "POST":
-        #foto = Pet.objects.all()
         foto = request.FILES.get('foto')
         nome = request.POST.get('nome')
+        animal = request.POST.get('animal')
         descricao = request.POST.get('descricao')
         estado = request.POST.get('estado')
         cidade = request.POST.get('cidade')
@@ -33,7 +35,7 @@ def novo_pet(request):
         sexo = request.POST.get('sexo')
         porte = request.POST.get('porte')
         
-
+        
 
     pet = Pet(
             usuario=request.user,
@@ -46,7 +48,17 @@ def novo_pet(request):
             raca_id=raca,
             sexo_id=sexo,
             porte_id=porte,
+            animal_id=animal,
         )
+    
+
+    pet.save()
+
+    raca = Raca(
+       animal_id=animal
+    )
+
+    raca.save()
 
     pet.save()
         
