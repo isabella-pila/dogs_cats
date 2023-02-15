@@ -1,4 +1,5 @@
 {% load static %}
+
 <!doctype html>
 <html lang="pt-BR">
     <head>
@@ -8,13 +9,18 @@
     <base href="{% static '/' %}">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet">
     <link rel="stylesheet" type="text/css" href="{% static 'adote/css/adote.css' %}" >
-        <script src="{% static 'adotar/js/index.js' %}"></script> 
+    <script src ="https://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"> </script>
+
+
+     <script src="{% static 'adotar/js/index.js' %}"></script>
+        
    
      <link rel="shortcut icon" href="img/favicon.ico" type="image / x-icon">
      <link rel="icon" href="img/favicon.ico" type="image / x-icon">
      <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
          integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
          crossorigin="anonymous"></script>
+         
      <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js"
          integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49"
          crossorigin="anonymous"></script>
@@ -35,7 +41,7 @@
           --------------------- MENU ---------------------
           ------------------------------------------------         
      -->
-     <nav class="navbar fixed-top navbar-expand-lg navbar-light bg-light">
+     <nav class="navbar fixed-top navbar-expand-lg navbar-dark ">
          <a class="navbar-brand" href="index.html"><img class="d-inline-block align-top" width="40" height="40"
                  src="{% static 'usuarios/img/logo_adote.png' %}"></a>
          <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarTogglerDemo01"
@@ -50,16 +56,12 @@
                  <li class="nav-item active">
                      <a class="nav-link" href="{% url 'cadastro'%}">cadastro</a>
                  </li>
-               <!-- <li class="nav-item active">
-                     <a class="nav-link" href="#item-3">Equipe</a>
-                 </li>
-                 --> 
-                <!-- <li class="nav-item active">
-                     <a class="nav-link" href="https://www.even3.com.br/ifmaismais/">Inscrições</a>
-                 </li> -->
+        
                  <li class="nav-item active">
-                     <a class="nav-link" href="{% url 'sair'%}">Sair</a>
-                 </li>
+                    <a class="nav-link" href="https://instagram.com/apaem_eloi_mendes?igshid=YmMyMTTA2M2Y="><img src="{% static 'adote/img/Instagram-Icon.png' %}" class="d-inline-block align-top" width="30"
+                            height="30"></a>
+                </li>
+                   
                  
              </ul>
          </div>
@@ -79,7 +81,7 @@
              <button class="btn btn-outline-light" type="submit"><a>Nos ajude a salvar vidas.</a></button>
          </form> <br><br>
          <div>
-            <!-- <p class="info"> É Hoje! </p> --> 
+            <!-- #D48191<p class="info"> É Hoje! </p> --> 
          </div>
      </section>
  
@@ -118,11 +120,12 @@
                            <div class="row row-cols-1 row-cols-md-3 g-4 text-center">
                                {% for pet in pets%}  
                            
-                               <div class="col-sm-6 col-lg-3" >
+                               <div class="col-sm-6 col-lg-3"  >
+                                 
                                  <div class="card border-success mb-10" style="max-width: 20rem;">
                                    <div class="card-body">
                                      <h5 class="card-title">{{pet.nome}}</h5>
-                                     <img class="card-img-top img-fluid" src="{{pet.foto.url}}" alt="Card image cap" style="width:15rem; height:15rem; object-fit: cover; object-position: 100% 50; border-radius: 50%;" >
+                                   <a href="{% url 'login'%}">  <img class="card-img-top img-fluid"  src="{{pet.foto.url}}" alt="Card image cap" style="width:15rem; height:15rem; object-fit: cover; object-position: 100% 50; border-radius: 50%;" > </a>
                                      <p class="card-text">{{pet.descricao}}</p>
                                      <p class="card-text"><small class="text-muted">
                                        {% if pet.status == "P" %}
@@ -139,92 +142,7 @@
                 
     </div>
    </section>
-                       <!-- <div style="padding:60px" class="col-md">
-                            <h3 class="font-vinho">Informações do pet</h3>
-                            <div class="row">
-                                <div class="col-md-3">
-                                    <img width="100%" src="{{pet.foto.url}}">
-                                </div>
-                                <div class="col-md-9">
-                                    <span class="span-bold">Nome:</span>
-                                    <p>{{pet.nome}}</p>
-                                    <div style="width:40%">
-                                        {% for tag in pet.tags.all%}
-                                        <span class="badge text-bg-info badge-lg">{{tag}}</span>
-                                        {% endfor %}
-                                    </div>
-                                </div>
-                            </div>  
-                            <br>
-                            <div class="row">
-                                <div class="col-md-5"> 
-                                    <span class="span-bold">Descrição</span>
-                                    <p>{{pet.descricao}}</p>
-                                    
-                                </div>
-        
-                                <div class="col-md-7">
-                                </div>
-                            </div>
-                            <hr>
-        
-                            <div class="row">
-                                <h3 class="font-vinho">Informações residenciais</h3>
-                                <div class="col-md">
-                                    <div class="row">
-                                        <div class="col-md">
-                                            <span class="span-bold">Estado</span>
-                                            <p>{{pet.estado}}</p>
-                                        </div>
-        
-                                        <div class="col-md">
-                                            <span class="span-bold">Cidade</span>
-                                            <p>{{pet.cidade}}</p>
-                                        </div>
-                                    </div>
-                                
-                                </div>
-        
-                                
-                                </div>
-                            </div>
-                        </div>-->
-     
-         <!-- 
-          -------------------------------------------------------
-          --------------------- ORGANIZAÇÃO ---------------------
-          -------------------------------------------------------         
-     <section id="item-3">
-         <h2 id="titulo"> Equipe </h2>
-         <div class="tudo">
-             <div class="membro" id="albertM">
-                 <img src="img/albert.png" onmouseover="MostraTexto('albert')" onMouseOut="TiraTexto('albert')">
-                 <span id="albert"> Albert Medeiros - 6° período </span>
-             </div>
-             <div class="membro" id="brunoM">
-                 <img src="img/bruno.png" onmouseover="MostraTexto('bruno')" onMouseOut="TiraTexto('bruno')">
-                 <span id="bruno"> Bruno Silveira - 8° período </span>
-             </div>
-             <div class="membro" id="marisaM">
-                 <img src="img/marisa.png" onmouseover="MostraTexto('marisa')" onMouseOut="TiraTexto('marisa')">
-                 <span id="marisa"> Marisa Vieira - 8° período </span>
-             </div>
-             <div class="membro" id="amandaM">
-                 <img src="img/amanda.png" onmouseover="MostraTexto('amanda')" onMouseOut="TiraTexto('amanda')">
-                 <span id="amanda"> Amanda Valério - 6° período </span>
-             </div>
-             <div class="membro" id="matheusM">
-                 <img src="img/matheus.png" onmouseover="MostraTexto('matheus')" onMouseOut="TiraTexto('matheus')">
-                 <span id="matheus"> Matheus Simões - 6° período </span>
-             </div>
-             <div class="membro" id="vanessaM">
-                 <img src="img/vanessa.png" onmouseover="MostraTexto('vanessa')" onMouseOut="TiraTexto('vanessa')">
-                 <span id="vanessa"> Vanessa Rodrigues - 8° período </span>
-             </div>
-         </div>
-     </section>
-     </div>
-     -->
+                     
  
          <!-- 
           --------------------------------------------------

@@ -4,18 +4,65 @@
     <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>Cadastro</title>
+    <title>listar_pets</title>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet">
     <link href="{% static 'usuarios/css/cadastro.css' %}" rel="stylesheet">
     <link href="{% static 'divulgar/css/novo_pet.css' %}" rel="stylesheet">
     <link href="{% static 'divulgar/css/seus_pet.css' %}" rel="stylesheet">
     <link href="{% static 'adotar/css/listar_pets.css' %}" rel="stylesheet">
+    
+    <base href="{% static '/' %}">
+    <link rel="stylesheet" type="text/css" href="{% static 'adote/css/adote.css' %}" >
+        <script src="{% static 'adotar/js/index.js' %}"></script> 
+   
+     <link rel="shortcut icon" href="img/favicon.ico" type="image / x-icon">
+     <link rel="icon" href="img/favicon.ico" type="image / x-icon">
+     <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
+         integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
+         crossorigin="anonymous"></script>
+     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js"
+         integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49"
+         crossorigin="anonymous"></script>
+
+
     </head>
     <body>
+        <nav class="navbar fixed-top navbar-expand-lg navbar-dark bg-dark" >
+            <a class="navbar-brand" href="index.html"><img class="d-inline-block align-top" width="40" height="40"
+                    src="{% static 'usuarios/img/logo_adote.png' %}"></a>
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarTogglerDemo01"
+                aria-controls="navbarTogglerDemo01" aria-expanded="true" aria-label="Alterna navegação">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarTogglerDemo01">
+                <ul class="navbar-nav ms-auto mt-2 mt-lg-0">
+                    <li class="nav-item active">
+                        <a class="nav-link" href="{% url 'novo_pet'%}">Doe</a>
+                    </li>
+                    <li class="nav-item active">
+                        <a class="nav-link" href="{% url 'seus_pets'%}">Seus Pet</a>
+                    </li>
+
+                
+                <li class="nav-item active">
+                    <a class="nav-link" href="{% url 'ver_pedido_adocao'%}">Pedido de adoção</a>
+                </li>
+                <li class="nav-item active">
+                    <a class="nav-link" href="{% url 'adote'%}">Página principal</a>
+                </li>
+                <li class="nav-item active">
+                    <a class="nav-link" href="{% url 'sair'%}">sair</a>
+                </li>
+                
+                </ul>
+            </div>
+    
+        </nav>
         
-        <div class="container-fluid">
+       <div class="container-fluid">
+        <!--<div  class="headerSec" >-->
             <div class="row">
-                <div class="col-md-2 bg-side sidebar">
+               <!-- <div class="col-md-2  pet">
                     <h2>ADO.TE</h2>
                     <hr>
                 
@@ -46,7 +93,7 @@
                        </table>
                     
                     
-                </div>
+                </div>-->
 
                 <div class="col-md">
                     <div class="wrapper">
@@ -79,11 +126,6 @@
                                              
                                     {% endfor%}
                                         </select>
-
-                                       
-                                            
-                                        
-
 
                                     </div>
                                     <div class="col-md-2">
@@ -125,13 +167,13 @@
                                         </td>
                                         <td>
                                             {% if pet.status == "P" %}
-                                                <span class="badge text-bg-primary">Para adoção</span>
+                                                <span class="badge ">Para adoção</span>
                                             {% elif pet.status == "A" %}
                                                 <span class="badge text-bg-success">Adotado</span>
                                             {% endif%}
 
                                            
-                                            
+                        
                                         </td>
                                        
                                         <td>

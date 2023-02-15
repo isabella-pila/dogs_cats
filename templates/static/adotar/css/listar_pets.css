@@ -1,5 +1,5 @@
 .btn-custom-secondary{
-    background-color: #762D77;
+    background-color: #cbafdf;
     border: none;
     box-shadow: 2px 2px 5px 1px rgb(108, 108, 108);
     color: white;
@@ -37,4 +37,8 @@
     font-size: 20px;
     font-align: center;
 
+}
+
+.badge{
+  background-color:#000586;  
 }

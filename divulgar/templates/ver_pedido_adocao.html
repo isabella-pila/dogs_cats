@@ -10,17 +10,49 @@
     <link href="{% static 'divulgar/css/novo_pet.css' %}" rel="stylesheet">
     <link href="{% static 'divulgar/css/seus_pet.css' %}" rel="stylesheet">
     <link href="{% static 'adotar/css/listar_pets.css' %}" rel="stylesheet">
+    <link rel="stylesheet" type="text/css" href="{% static 'adote/css/adote.css' %}" >
     </head>
     <body>
 
-        <div class="container-fluid">
+        <nav class="navbar fixed-top navbar-expand-lg navbar-dark bg-dark" >
+            <a class="navbar-brand" href="index.html"><img class="d-inline-block align-top" width="40" height="40"
+                    src="{% static 'usuarios/img/logo_adote.png' %}"></a>
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarTogglerDemo01"
+                aria-controls="navbarTogglerDemo01" aria-expanded="true" aria-label="Alterna navegação">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarTogglerDemo01">
+                <ul class="navbar-nav ms-auto mt-2 mt-lg-0">
+                    <li class="nav-item active">
+                        <a class="nav-link" href="{% url 'novo_pet'%}">Doe</a>
+                    </li>
+                    <li class="nav-item active">
+                        <a class="nav-link" href="{% url 'seus_pets'%}">Seus Pet</a>
+                    </li>
+                <li class="nav-item active">
+                    <a class="nav-link" href="{% url 'ver_pedido_adocao'%}">Pedido de adoção</a>
+                </li>
+                <li class="nav-item active">
+                    <a class="nav-link" href="{% url 'adote'%}">Página principal</a>
+                </li>
+                <li class="nav-item active">
+                    <a class="nav-link" href="{% url 'sair'%}">sair</a>
+                </li>
+                    
+                </ul>
+            </div>
+    
+        </nav>
+        
+        <!--<div class="container-fluid">-->
+        <div  class="headerSec2" >
             <div class="row">
-                <div class="col-md-2 bg-side-plataforma sidebar">
+               <!--  <div class="col-md-2 bg-side-plataforma sidebar">
                     <h2>ADO.TE</h2>
                     <hr>
                   
                     
-                </div>
+                </div>-->
 
                 <div style="padding:60px" class="col-md">
                     <div class="row">
@@ -36,11 +68,11 @@
                             <div class="col-md-3" style="margin-top: 20px;">
                                 <div class="card" style="background-color: #D6D6D6; border:none;">
                                     <div style="padding:10px">
-                                        <span clas="span-bold">{{pedido.pet.nome}}</span>
+                                        <span clas="span-bold">{{pedido.usuario.username}}</span>
                                     </div>
                                     <img class="card-img-top" src="{{pedido.pet.foto.url}}">
                                     <div class="card-body">
-                                        <h4 class="card-title">{{pedido.usuario.username}}</h4>
+                                        <h4 class="card-title">{{pedido.pet.nome}}</h4>
                                         <span class="span-bold2">Telefone:</span>
                                         <p>{{pedido.pet.telefone}}</p>
                                         

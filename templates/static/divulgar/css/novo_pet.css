@@ -1,8 +1,12 @@
 
 .sidebar{
     text-align: center;
-    padding: 20px;
-
+    padding: 50px;
+}
+.pet{
+    text-align: center;
+    padding: 50px;
+    margin-top: 10%; 
 }
 .wrapper {
     margin-top: 3%;

@@ -10,17 +10,52 @@
     <link href="{% static 'divulgar/css/novo_pet.css' %}" rel="stylesheet">
     <link href="{% static 'divulgar/css/seus_pet.css' %}" rel="stylesheet">
     <link href="{% static 'adotar/css/listar_pets.css' %}" rel="stylesheet">
+   
+    <link rel="stylesheet" type="text/css" href="{% static 'adote/css/adote.css' %}" >
     </head>
     <body>
 
-        <div class="container-fluid">
+        <nav class="navbar fixed-top navbar-expand-lg navbar-dark" >
+            <a class="navbar-brand" href="index.html"><img class="d-inline-block align-top" width="40" height="40"
+                    src="{% static 'usuarios/img/logo_adote.png' %}"></a>
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarTogglerDemo01"
+                aria-controls="navbarTogglerDemo01" aria-expanded="true" aria-label="Alterna navegação">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarTogglerDemo01">
+                <ul class="navbar-nav ms-auto mt-2 mt-lg-0">
+                    <li class="nav-item active">
+                        <a class="nav-link" href="{% url 'novo_pet'%}">Doe</a>
+                    </li>
+                    <li class="nav-item active">
+                        <a class="nav-link" href="{% url 'seus_pets'%}">Seus Pet</a>
+                    </li>
+
+                
+                <li class="nav-item active">
+                    <a class="nav-link" href="{% url 'ver_pedido_adocao'%}">Pedido de adoção</a>
+                </li>
+                <li class="nav-item active">
+                    <a class="nav-link" href="{% url 'adote'%}">Página principal</a>
+                </li>
+                <li class="nav-item active">
+                    <a class="nav-link" href="{% url 'sair'%}">sair</a>
+                </li>
+                    
+                </ul>
+            </div>
+    
+        </nav>
+        
+        <!--<div class="container-fluid">-->
+        <div  class="headerSecVer_pet" >
             <div class="row">
-                <div class="col-md-2 bg-side-plataforma sidebar">
+                <!-- <div class="col-md-2 bg-side-plataforma sidebar">
                     <h2>ADO.TE</h2>
                     <hr>
                     
                     
-                </div>
+                </div>-->
 
                 <div style="padding:60px" class="col-md">
                     <h3 class="font-vinho">Informações do pet</h3>
@@ -33,7 +68,7 @@
                             <p>{{pet.nome}}</p>
                             <div style="width:40%">
                                 {% for tag in pet.tags.all%}
-                                <span class="badge text-bg-info badge-lg">{{tag}}</span>
+                                <span class="badge  badge-pill">{{tag}}</span>
                                 {% endfor %}
                             </div>
                         </div>
@@ -41,7 +76,7 @@
                     <br>
                     <div class="row">
                         <div class="col-md-5"> 
-                            <span class="span-bold">Descrição</span>
+                            <span class="span-bold">Descrição:</span>
                             <p>{{pet.descricao}}</p>
                             
                         </div>
@@ -56,16 +91,16 @@
                         <div class="col-md">
                             <div class="row">
                                 <div class="col-md">
-                                    <span class="span-bold">Estado</span>
+                                    <span class="span-bold">Estado:</span>
                                     <p>{{pet.estado}}</p>
                                 </div>
 
                                 <div class="col-md">
-                                    <span class="span-bold">Cidade</span>
+                                    <span class="span-bold">Cidade:</span>
                                     <p>{{pet.cidade}}</p>
                                 </div>
                             </div>
-                            <span class="span-bold">Telefone para contato</span>
+                            <span class="span-bold">Telefone para contato:</span>
                             <p>{{pet.telefone}}</p>
                             <br>
                             <a href="{% url 'pedido_adocao' pet.id %}" class="btn btn-success btn-lg">SOLICITAR ADOÇÃO</a>

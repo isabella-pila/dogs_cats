@@ -43,13 +43,17 @@ body, nav, .conteudoSbr, .headerSec, .datas, .conteudProg, #progInd, .tudo, .equ
     margin-left: 30px;
 }
 
-.navbar, .fixed-top, .navbar-expand-lg, .navbar-light, .bg-light{
-    font-family: 'Bebas Neue', cursive;
+.navbar, .fixed-top, .navbar-expand-lg, .navbar-dark{
+ 
+    background: rgb(250,250,250);
+background: linear-gradient(90deg, rgba(250,250,250,1) 0%, rgba(203,175,223,1) 47%);
+    font-family:Times New Roman;
     display: flex;
     justify-items: center;
     justify-content: center;
     align-items: center;
 }
+
 nav ul{
     font-size: 20px;
     display: flex;
@@ -79,10 +83,39 @@ nav li{
     height: 100vh;
     width: 100%;
     flex-direction: column;
-    font-family: 'Bebas Neue', cursive;
+    font-family: calibri;
     margin: 0;
 }
 
+.headerSec2{
+    height: 100vh;
+    width: 100%;
+    flex-direction: column;
+    font-family: calibri;
+    margin:1% ;
+}
+.headerSecNovo_pet{
+    height: 100vh;
+    width: 100%;
+    flex-direction: column;
+    font-family: calibri;
+    margin:3% ;
+}
+.headerSecSeus_pet{
+    height: 100vh;
+    width: 100%;
+    flex-direction: column;
+    font-family: calibri;
+    margin:3% ;
+}
+.headerSecVer_pet{
+    height: 100vh;
+    width: 100%;
+    flex-direction: column;
+    font-family: calibri;
+    font-size:20px;
+    margin:1% ;
+}
 
 #logotipo{
     width: 35vh;
@@ -104,8 +137,8 @@ nav li{
     font-size: 20px;
 }
 .btn, .btn-outline-light{
-   width: 80vh;
-   height: 12vh;
+   width: 30vh;
+   height: 8vh;
    display: flex;
    justify-items: center;
    justify-content: center;
@@ -133,7 +166,9 @@ nav li{
     border-spacing: 0;
 }
 .nav-link{
-    font-size: 22px;
+    font-size: 20px;
+    fonte-family: calibri;
+    color:#fff;
 }
 .headerSec p{
     font-size: 40px;
@@ -155,7 +190,7 @@ nav li{
 }
 
 .headerSec a:visited {
-    color: #c8cee7;
+    color: #fff;
 }
 
 .subscribe{
@@ -352,7 +387,7 @@ nav li{
     text-align: center;
     opacity:0;    
     width: 100%;
-    font-size: 18px;
+    font-size: 10px;
     font-family: 'Bebas Neue', cursive;
     background-color: rgba(0,0,0, 0.5);
 }
@@ -412,8 +447,8 @@ nav{
     margin: 20px;
 }
 .headerSec p{
-    font-size: 35px;
-    color: #000; 
+    font-size: 30px;
+    color: #fff; 
 }
 #logotipo{
     width: 190px;
@@ -473,5 +508,42 @@ nav{
 #link-meet{
     font-size: 12px;
 
+}
+.headerSec {
+    height: 100vh;
+    width: 100%;
+    flex-direction: column;
+    font-family: calibri;
+    margin: 10%;
+}
+
+.headerSec2{
+    height: 100vh;
+    width: 100%;
+    flex-direction: column;
+    font-family: calibri;
+    margin:5% ;
+}
+.headerSecNovo_pet{
+    height: 100vh;
+    width: 100%;
+    flex-direction: column;
+    font-family: calibri;
+    margin:13% ;
+}
+.headerSecSeus_pet{
+    height: 100vh;
+    width: 100%;
+    flex-direction: column;
+    font-family: calibri;
+    margin:13% ;
+}
+.headerSecVer_pet{
+    height: 100vh;
+    width: 100%;
+    flex-direction: column;
+    font-family: calibri;
+    font-size:20px;
+    margin:5% ;
 }
 }

@@ -1,14 +1,18 @@
 
 //-------------------------------------------------------------------------------//
-$(function(){ 
-    var navMain = $(".navbar-collapse"); // avoid dependency on #id
-    // "a:not([data-toggle])" - to avoid issues caused
-    // when you have dropdown inside navbar
-    navMain.on("click", "a:not([data-toggle])", null, function () {
-        navMain.collapse('hide');
-    });
-});
 
+
+document.addEventListener("DOMContentLoaded", function() {
+    var navMain = document.querySelector(".navbar-collapse");
+    navMain.addEventListener("click", function(event) {
+      if (event.target.tagName.toLowerCase() === "a" && !event.target.hasAttribute("data-toggle")) {
+        navMain.classList.remove("show");
+      }
+    });
+  });
+
+
+  
 function ready(){
     window.location.href='#foo';
   }

@@ -1,11 +1,9 @@
 
 .bg-side{
-    background-color: #D48191;
+    background-color: #cbafdf;
     color: white;
     height: 100vh;
     
-    
-
 }
 .header{
     border-bottom: 1px solid white;
@@ -35,16 +33,19 @@
 }
 
 .link-float{
-
     text-decoration: none;
     float: right;
     margin: 20px;
+    font-size: 20px;
+    fonte-family: calibri;
+    color:#fff;
 }
 
 .side-logo{
     text-align: center;
     margin-top: 60px;    
 }
+
 @media(max-width: 800px){
 
     .bg-side{
