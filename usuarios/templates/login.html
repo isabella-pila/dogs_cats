@@ -30,7 +30,7 @@
                         <h2>Logar</h2>
                         <!--<p>Que bom ter você de volta.</p>-->
                         <hr>
-                        <form action="{% url 'login'%}" method="POST">{% csrf_token %}
+                        <form class="form" action="{% url 'login'%}" method="POST">{% csrf_token %}
                             <span>Nome:</span>
                             <input type="text" class="form-control" placeholder="Digite seu nome..." name="nome">
                             <br>
@@ -48,7 +48,7 @@
 
                 <div class="col-md-7">
                     <div class="side-logo">
-                        <img class="logo-margin-top" src="{% static 'usuarios/img/logo_adote.png' %}" width="20%">
+                        <img  src="{% static 'usuarios/img/logo_adote.png' %}" width="9%">
                         <h1>ADO.TE</h1>
                         <p>Nos ajude a salvar vidas.</p>
                     </div>

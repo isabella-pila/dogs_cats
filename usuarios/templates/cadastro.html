@@ -30,7 +30,7 @@
                         <h2>Cadastre-se</h2>
                         <!--<p>Seu cadastro salva vidas.</p>-->
                         <hr>
-                        <form action="{% url 'cadastro'%}" method="POST"> {% csrf_token %}
+                        <form class="form"action="{% url 'cadastro'%}" method="POST"> {% csrf_token %}
                             <span>Nome:</span>
                             <input type="text" class="form-control" placeholder="Digite seu nome..." name="nome">
                             <br>
@@ -57,7 +57,7 @@
                     </div>
                 </div>
 
-                <div class="col-md-7">
+                <div class="col-md-7 side-logo ">
                     <div class="side-logo">
                         <img src="{% static 'usuarios/img/logo_adote.png' %}" width="9%">
                         <h1>ADO.TE</h1>

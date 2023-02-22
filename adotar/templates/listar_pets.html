@@ -28,8 +28,7 @@
     </head>
     <body>
         <nav class="navbar fixed-top navbar-expand-lg navbar-dark bg-dark" >
-            <a class="navbar-brand" href="index.html"><img class="d-inline-block align-top" width="40" height="40"
-                    src="{% static 'usuarios/img/logo_adote.png' %}"></a>
+            <img class="d-inline-block align-top" width="40" height="40" src="{% static 'usuarios/img/logo_adote.png' %}">
             <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarTogglerDemo01"
                 aria-controls="navbarTogglerDemo01" aria-expanded="true" aria-label="Alterna navegação">
                 <span class="navbar-toggler-icon"></span>
@@ -59,8 +58,8 @@
     
         </nav>
         
-       <div class="container-fluid">
-        <!--<div  class="headerSec" >-->
+      <!-- <div class="container-fluid">-->
+        <div  class="headerSecListar" >
             <div class="row">
                <!-- <div class="col-md-2  pet">
                     <h2>ADO.TE</h2>
@@ -118,14 +117,22 @@
                                         <input type="text" placeholder="Cidade..." value="{% if cidade %}{{cidade}}{% endif %}" name="cidade" class="form-control">
                                     </div>
 
-                                    <div class="col-md-4">
+                                    <!--<div class="col-md-4">
                                         <select class="form-select" name="raca">
                                            
                                             {% for raca in racas %}
                                             <option {% if raca_filter.id == raca.id %} selected {% endif %} value="{{raca.id}}">{{raca}}</option>
                                              
                                     {% endfor%}
-                                        </select>
+                                        </select>-->
+                                        <div class="col-md-4">
+                                            <select class="form-select" name="animal">
+                                                <option {% if animal_filter.id is None %} selected {% endif %} value="">Selecione um animal</option>
+                                                {% for animal in animals %}
+                                                <option {% if animal_filter.id == animal.id %} selected {% endif %} value="{{animal.id}}">{{animal.animal}}</option>
+                                                 
+                                        {% endfor%}
+                                            </select>
 
                                     </div>
                                     <div class="col-md-2">
@@ -134,18 +141,19 @@
                                 </div>
                             </form>
 
-                             <table class="tabela" cellpadding="20">
+                             <table class="tabela" cellpadding="6">
                                 <tr>
                                     <th>Foto</th>
                                     <th>Nome</th>
+                                    
                                     <th>Raça</th>
                                     <th>Sexo</th>
                                     <th>Porte</th>
                                     <th>Status</th>
                                     <th>Cidade</th>
-                                    
+                                    <th>Tipo de animal<th>
                                 </tr>
-                                {% for pet in pets%}
+                                {% for pet in pets_list%}
                                     <tr class="tabela-linha">
                                         <td width="20%">
                                             <a href="{% url 'ver_pet' pet.id %}"><img width="40%" src="{{pet.foto.url}}"></a>
@@ -153,10 +161,12 @@
                                         <td>
                                             {{pet.nome}}
                                         </td>
+                                       
                                         <td>
                                             {{pet.raca}}
                                             
                                         </td>
+                                       
                                         <td>
                                             {{pet.sexo}}
                                             
@@ -179,12 +189,31 @@
                                         <td>
                                             {{pet.cidade}}
                                         </td>
+                                        <td>
+                                            {{pet.animal.animal}}
+                                            
+                                        </td>
                                     </tr>
                                 {% endfor %}
                             
                                 
                             </table>
-                        </div>
+                            <div class="page-links">
+                      {% if pets_list.has_previous %}
+                        <!--  <a href="{% url 'listar_pets' %}?page=1">&laquo; Anterior</a>-->
+                          <a class="paginacao-link" href="{% url 'listar_pets' %}?page={{ pets_list.previous_page_number }}">Anterior</a>
+                      {% endif %}
+              
+                     <!-- <span class="current-page">
+                          Página {{ pets_list.number }} de {{ pets_list.paginator.num_pages }}
+                      </span>-->
+              
+                      {% if pets_list.has_next %}
+                          <a class="paginacao-link" href="{% url 'listar_pets' %}?page={{ pets_list.next_page_number}}">Próximo</a>
+                        <!--  <a href="{% url 'listar_pets' %}?page={{ pets_list.paginator.num_pages }}">last &raquo;</a>-->
+                      {% endif %}
+                  </span>
+              </div>
                     </div>
                 </div>
 

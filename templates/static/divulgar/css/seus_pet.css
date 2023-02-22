@@ -9,10 +9,31 @@
  
  .tabela-linha{
      background-color: #e8e7e7;
+
+     
  }
 
  .letras{
     font-size:50px;
     color:#000;
 }
+.btn{
+    width: 10%;
+    height: 10%; 
+}
+@media(max-width: 800px){
+
+    .width80{ 
+        width: 100vw;
+     
+    }
+    .tabela{
+        width:100vw;
+      
+    }
+   
+}
+
+
+
 

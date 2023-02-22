@@ -67,8 +67,6 @@ INSTALLED_APPS = [
     'usuarios',
     'divulgar',
     'adotar',
-    
-    
 ]
 
 MIDDLEWARE = [

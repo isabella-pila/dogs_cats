@@ -1,7 +1,5 @@
 
 //-------------------------------------------------------------------------------//
-
-
 document.addEventListener("DOMContentLoaded", function() {
     var navMain = document.querySelector(".navbar-collapse");
     navMain.addEventListener("click", function(event) {

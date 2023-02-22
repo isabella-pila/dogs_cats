@@ -27,4 +27,15 @@
     color: #A24D52;
 }
 
+
+@media(max-width: 800px){
+
+    .box{ 
+        width: 100vw;
+     
+    }
+}
+
+
+
   

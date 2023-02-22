@@ -101,6 +101,13 @@ nav li{
     font-family: calibri;
     margin:3% ;
 }
+.headerSecListar{
+    height: 100vh;
+    width: 100%;
+    flex-direction: column;
+    font-family: calibri;
+    margin:4% ;
+}
 .headerSecSeus_pet{
     height: 100vh;
     width: 100%;
@@ -165,6 +172,14 @@ nav li{
     border-collapse: collapse;
     border-spacing: 0;
 }
+
+.paginacao-link{
+    font-size: 15px;
+    fonte-family: calibri;
+    color:#570071;
+    text-decoration: none;
+}
+ 
 .nav-link{
     font-size: 20px;
     fonte-family: calibri;
@@ -509,6 +524,7 @@ nav{
     font-size: 12px;
 
 }
+
 .headerSec {
     height: 100vh;
     width: 100%;

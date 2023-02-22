@@ -7,7 +7,7 @@ from django.http import HttpResponse, JsonResponse
 from django.shortcuts import redirect
 from adotar.models import PedidoAdocao
 from django.views.decorators.csrf import csrf_exempt
-
+from django.shortcuts import get_object_or_404
 import cloudinary
 import cloudinary.uploader
 
@@ -51,14 +51,9 @@ def novo_pet(request):
             animal_id=animal,
         )
     
-
     pet.save()
 
-    raca = Raca(
-       animal_id=animal
-    )
 
-    raca.save()
 
     pet.save()
         
@@ -101,9 +96,15 @@ def ver_pet(request, id):
 
 @login_required
 def ver_pedido_adocao(request):
-    if request.method == "GET"  : 
-            pedidos = PedidoAdocao.objects.filter(usuario=request.user).filter(status="AG")
-            return render(request, 'ver_pedido_adocao.html', {'pedidos': pedidos})
+
+    pet =Pet.objects.filter(usuario=request.user)
+    if request.method == "GET":
+        pedidos = PedidoAdocao.objects.filter(pet__in=pet, status="AG")
+        return render(request, 'ver_pedido_adocao.html', {'pedidos': pedidos})
+
+   # if request.method == "GET"  : 
+    #       pedidos = PedidoAdocao.objects.filter(usuario=request.user).filter(status="AG")
+     #      return render(request, 'ver_pedido_adocao.html', {'pedidos': pedidos})
 
 
     
