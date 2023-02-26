@@ -101,6 +101,8 @@ def ver_pedido_adocao(request):
     if request.method == "GET":
         pedidos = PedidoAdocao.objects.filter(pet__in=pet, status="AG")
         return render(request, 'ver_pedido_adocao.html', {'pedidos': pedidos})
+    
+    
 
    # if request.method == "GET"  : 
     #       pedidos = PedidoAdocao.objects.filter(usuario=request.user).filter(status="AG")

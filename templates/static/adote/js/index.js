@@ -1,16 +1,11 @@
 
 //-------------------------------------------------------------------------------//
-document.addEventListener("DOMContentLoaded", function() {
-    var navMain = document.querySelector(".navbar-collapse");
-    navMain.addEventListener("click", function(event) {
-      if (event.target.tagName.toLowerCase() === "a" && !event.target.hasAttribute("data-toggle")) {
-        navMain.classList.remove("show");
-      }
+$(document).ready(function(){
+    $(".navbar-toggler").click(function(){
+      $(".navbar-collapse").toggle();
     });
   });
 
-
-  
 function ready(){
     window.location.href='#foo';
   }

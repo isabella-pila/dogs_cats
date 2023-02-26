@@ -56,8 +56,10 @@ def pedido_adocao(request, id_pet):
     pedido.save()
 
     messages.add_message(request, constants.SUCCESS, 'Pedido de adoção realizado, você receberá um e-mail caso ele seja aprovado.')
+   
+    
     return redirect('/adotar')
-
+    
 @login_required
 def processa_pedido_adocao(request, id_pedido):
     status = request.GET.get('status')

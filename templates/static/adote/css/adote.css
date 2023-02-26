@@ -143,7 +143,7 @@ nav li{
 .insc {
     font-size: 20px;
 }
-.btn, .btn-outline-light{
+.btn-outline-light{
    width: 30vh;
    height: 8vh;
    display: flex;
@@ -473,12 +473,13 @@ nav{
 }
 
 .btn, .btn-outline-light{
-    width: 55vw;
-    height: 12vh;
+    width: 17vw;
+    height: 5vh;
     display: flex;
     justify-items: center;
     justify-content: center;
     align-items: center;
+    font-size: 13px;
  }
 #img_sobre{
     width: 80vw;
