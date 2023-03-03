@@ -18,7 +18,7 @@
     <body>
 
         <nav class="navbar fixed-top navbar-expand-lg navbar-dark bg-dark" >
-            <a class="navbar-brand" href="index.html"><img class="d-inline-block align-top" width="40" height="40"
+            <a class="navbar-brand" ><img class="d-inline-block align-top" width="40" height="40"
                     src="{% static 'usuarios/img/logo_adote.png' %}"></a>
             <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarTogglerDemo01"
                 aria-controls="navbarTogglerDemo01" aria-expanded="true" aria-label="Alterna navegação">
@@ -66,13 +66,14 @@
                             <h3 class="font-vinho">seus pet</h3>
                             <hr>
 
-                             <table class="tabela" cellpadding="0">
+                             <table class="tabela" cellpadding="10">
                                 <tr>
                                     <th>Foto</th>
                                     <th>Nome</th>
                                     <th>Raça</th>
                                     <th>Status</th>
                                     <th>Remover</th>
+                                    <th> editar</th>
                                 </tr>
                                
                                 {% for pet in pets %}
@@ -101,6 +102,10 @@
                                         <td>
                                             <a href="{% url 'remover_pet' pet.id %}" class="btn btn-danger">REMOVER</a>
 
+                                        </td>
+
+                                        <td>
+                                            <a href="{% url 'edit_pet' pet.id %}" class="btn btn-success">editar</a>
                                         </td>
                                     </tr>
                                 {% endfor%}

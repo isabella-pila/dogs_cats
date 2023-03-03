@@ -454,7 +454,7 @@ footer img{
 /*
     -------- CSS TELA MENOR --------
 */
-@media(max-width: 650px){
+@media(max-width: 450px){
 nav{
     padding-top: 0;
 }
@@ -528,7 +528,7 @@ nav{
 
 .headerSec {
     height: 100vh;
-    width: 100%;
+    width: 500px;
     flex-direction: column;
     font-family: calibri;
     margin: 10%;

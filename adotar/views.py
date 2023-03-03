@@ -44,11 +44,12 @@ def listar_pets(request):
 
 @login_required
 def pedido_adocao(request, id_pet):
-    pet = Pet.objects.filter(id=id_pet).filter(status="P")
+    pet = Pet.objects.filter(id=id_pet).filter(status="A")
     if not pet.exists():
         messages.add_message(request, constants.WARNING,'Esse pet já foi adotado ')
         return redirect('/adotar')
-       
+ 
+        
     pedido = PedidoAdocao(pet=pet.first(),
                          usuario=request.user,
                           data=datetime.now())
@@ -59,9 +60,14 @@ def pedido_adocao(request, id_pet):
    
     
     return redirect('/adotar')
+
+
+
     
+
 @login_required
 def processa_pedido_adocao(request, id_pedido):
+   
     status = request.GET.get('status')
     pedido = PedidoAdocao.objects.get(id=id_pedido)
     if status == "A":
@@ -74,7 +80,7 @@ def processa_pedido_adocao(request, id_pedido):
     pedido.save()
 
   
-    #todo: alterar o
+    
 
     print(pedido.usuario.email)
     email = send_mail(

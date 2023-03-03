@@ -74,11 +74,11 @@
           --------------------------------------------------         
      -->
      <section class="headerSec"
-         style="background: url('{% static 'adote/img/pets-3715734.jpg' %}'); background-repeat: no-repeat; background-size: cover;  ">
+         style="background: url('{% static 'adote/img/pets-3715734.jpg' %}'); background-repeat: no-repeat; background-size: cover;">
          <!--<img id="logotipo" class="logotipo" src="{% static 'usuarios/img/logo_adote.png' %}">-->
          <p class="date">Ado.te</p>
          
-             <button class="btn btn-outline-light" type="button" id="scroll-to-foo"><a>Nos ajude a salvar vidas.</a></button>
+        <p class="date">Nos ajude a salvar vidas.</P>
           <br><br>
          <div>
             <!-- #D48191<p class="info"> É Hoje! </p> --> 
@@ -150,13 +150,7 @@
         $(".navbar-collapse").toggle();
       });
     });
-    $(document).ready(function(){
-        $("#scroll-to-foo").click(function() {
-            $('html, body').animate({
-                scrollTop: $(".foo").offset().top
-            }, 1000);
-        });
-    });
+   
   </script>
  
          <!-- 

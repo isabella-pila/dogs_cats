@@ -10,7 +10,8 @@ from django.views.decorators.csrf import csrf_exempt
 from django.shortcuts import get_object_or_404
 import cloudinary
 import cloudinary.uploader
-
+from django.shortcuts import render
+from .forms import PetForm
 
 @login_required
 def novo_pet(request):
@@ -35,7 +36,7 @@ def novo_pet(request):
         sexo = request.POST.get('sexo')
         porte = request.POST.get('porte')
         
-        
+       #   
 
     pet = Pet(
             usuario=request.user,
@@ -65,6 +66,8 @@ def novo_pet(request):
         #tags = Tag.objects.all()
         #racas = Raca.objects.all()
         #messages.add_message(request, constants.SUCCESS, 'Novo pet cadastrado')
+
+  
     return redirect('/divulgar/seus_pets') 
 
 @login_required
@@ -79,9 +82,11 @@ def remover_pet(request, id):
   
     if not pet.usuario == request.user:
       messages.add_message(request, constants.ERROR, 'Esse pet não e seu, espertinho haha.')
-      return redirect('/divulgar/seus_pets')  
+      return redirect('/divulgar/seus_pets') 
 
     pet.delete()
+
+    
     messages.add_message(request, constants.SUCCESS, 'Removido com sucesso.')
     return redirect('/divulgar/seus_pets') 
 
@@ -130,3 +135,24 @@ def api_adocoes_por_raca(request):
             'labels': racas}
 
     return JsonResponse(data)
+
+
+
+
+
+@login_required
+def edit_pet(request, id):
+    pet = get_object_or_404(Pet, id=id)
+    if request.method == 'POST':
+        form = PetForm(request.POST, request.FILES, instance=pet)
+        if form.is_valid():
+            form.save()
+            messages.success(request, 'Perfil do pet atualizado com sucesso.')
+            return redirect('/divulgar/seus_pets') 
+    else:
+        form = PetForm(instance=pet)
+    return render(request, 'edit_pet.html', {'form': form})
+
+
+
+    
