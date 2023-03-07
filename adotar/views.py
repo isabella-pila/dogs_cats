@@ -9,6 +9,7 @@ from django.contrib.auth.decorators import login_required
 from django.core.mail import send_mail
 from django.http import HttpResponse
 from django.core.paginator import Paginator
+from django.shortcuts import get_object_or_404
 
 @login_required
 
@@ -44,54 +45,55 @@ def listar_pets(request):
 
 @login_required
 def pedido_adocao(request, id_pet):
-    pet = Pet.objects.filter(id=id_pet).filter(status="A")
-    if not pet.exists():
-        messages.add_message(request, constants.WARNING,'Esse pet já foi adotado ')
-        return redirect('/adotar')
- 
-        
+    pet = Pet.objects.filter(id=id_pet).filter(status="P")
+
     pedido = PedidoAdocao(pet=pet.first(),
-                         usuario=request.user,
+                          usuario=request.user,
                           data=datetime.now())
 
     pedido.save()
+    if pedido.status=="AP":
+        messages.add_message(request, constants.ERROR, 'Esse pet já foi adotado :)')
+        return redirect('/adotar')
 
-    messages.add_message(request, constants.SUCCESS, 'Pedido de adoção realizado, você receberá um e-mail caso ele seja aprovado.')
-   
+    else:
+       messages.add_message(request, constants.SUCCESS, 'Pedido de adoção realizado, você receberá um e-mail caso ele seja aprovado.')
+       return redirect('/adotar')
+
+
     
-    return redirect('/adotar')
 
-
-
-    
-
-@login_required
 def processa_pedido_adocao(request, id_pedido):
-   
-    status = request.GET.get('status')
     pedido = PedidoAdocao.objects.get(id=id_pedido)
+    pet = pedido.pet
+
+    status = request.GET.get('status')
     if status == "A":
+        # Atualiza o status do pet para adotado
+        pet.status = 'A'
+        pet.save()
+
+        # Atualiza o status do pedido para aprovado
         pedido.status = 'AP'
-        string = '''Olá, sua adoção foi aprovada. ...'''
+        string = '''Olá, sua adoção foi aprovada. Parabéns pelo novo membro da família!'''
     elif status == "R":
-        string = '''Olá, sua adoção foi recusada. ...'''
+        # Atualiza o status do pedido para recusado
         pedido.status = 'R'
+        string = '''Olá, sua adoção foi recusada. Infelizmente, o pet já foi adotado ou o pedido não foi aprovado.'''
 
     pedido.save()
 
-  
-    
-
-    print(pedido.usuario.email)
-    email = send_mail(
-        'Sua adoção foi processada',
+    # Envia o e-mail para o usuário
+    send_mail(
+        'Status da sua adoção',
         string,
         'caio@pythonando.com.br',
-        [pedido.usuario.email,],
+        [pedido.usuario.email],
+        fail_silently=False,
     )
-    
-    messages.add_message(request, constants.SUCCESS, 'Pedido de adoção processado com sucesso')
-    return redirect('/divulgar/ver_pedido_adocao')
+
+    messages.success(request, 'Pedido de adoção processado com sucesso')
+    return redirect('/divulgar/seus_pets')
 
 
 

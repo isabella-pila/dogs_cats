@@ -6,7 +6,7 @@
     <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>novo_pet</title>
+    <title>editar_pet</title>
     <link rel="icon" href="{% static 'usuarios/img/logo_adote.ico'%}" type="image / x-icon">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet">
     <link rel="stylesheet" type="text/css" href="{% static 'adote/css/adote.css' %}" >
@@ -46,13 +46,88 @@
     
         </nav>
 
-<div class="container">
-  <h1>Editar perfil do pet</h1>
-  <form method="post" enctype="multipart/form-data">
+        <div  class="headerSecNovo_pet" >
+            <div class="row">
+             
+
+                <div class="col-md">
+                    <div class="wrapper">
+                        <div class="box">
+                            <div class="header-box">
+                                <h3 class="font-vinho">Editar perfil do pet </h3>
+                                <hr>
+                            </div>
+  <form method="post" enctype="multipart/form-data" >
     {% csrf_token %}
-    {{ form.as_p }}
-    <button type="submit" class="btn btn-primary">Salvar</button>
+   <!--'nome', 'descricao', 'animal', 'estado', 'cidade','telefone','tags','raca','sexo','porte','foto']--> 
+     <!--  {{ form.as_p }} --> 
+
+
+     <div class="col-md">
+        {{ form.foto.label_tag }}
+        {{ form.foto}}
+      </div>
+      <br>8
+     <div class="col-md">
+        {{ form.nome.label_tag }}
+        {{ form.nome }}
+      </div>
+   <br>
+      <div class="col-md">
+        {{ form.descricao.label_tag }}
+        {{ form.descricao }}
+      </div>
+      <br>
+      <div class="col-md">
+        {{ form.animal.label_tag }}
+        {{ form.animal }}
+      </div>
+      <br>
+      <diV class="row">
+        <div class="col-md">
+        {{ form.estado.label_tag }}
+        {{ form.estado }}
+      </div>
+      <br>
+      <div class="col-md">
+        {{ form.cidade.label_tag }}
+        {{ form.cidade}}
+      </div>
+    </div>
+      <br>
+      <div class="col-md">
+        {{ form.telefone.label_tag }}
+        {{ form.telefone}}
+      </div>
+      <br>
+      <div class="col-md">
+        {{ form.raca.label_tag }}
+        {{ form.raca}}
+      </div>
+      <br>
+      <div class="col-md">
+        {{ form.tags.label_tag }}
+        {{ form.tags}}
+      </div>
+      <br>
+      <div class="col-md">
+        {{ form.sexo.label_tag }}
+        {{ form.sexo}}
+      </div>
+      <br>
+      <div class="col-md">
+        {{ form.porte.label_tag }}
+        {{ form.porte}}
+      </div>
+      <br>
+      
+ 
+    <button type="submit" class="btn btn-success">Salvar</button>
   </form>
+</div>
+</div>
+</div>
+</div>
 </div>
 </body>
 </html>
