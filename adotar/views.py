@@ -59,6 +59,9 @@ def pedido_adocao(request, id_pet):
     else:
        messages.add_message(request, constants.SUCCESS, 'Pedido de adoção realizado, você receberá um e-mail caso ele seja aprovado.')
        return redirect('/adotar')
+    
+def erro(request, exception):
+    return render(request, 'bug.html')
 
 
     

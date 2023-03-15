@@ -11,6 +11,9 @@ urlpatterns = [
     path('auth/', include('usuarios.urls')),
     path('divulgar/', include('divulgar.urls')),
     path('adotar/', include('adotar.urls')),
+
     
 
 ] + static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
+
+#handler404 = "adotar.views.erro"

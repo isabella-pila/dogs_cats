@@ -2,6 +2,7 @@
 from django.shortcuts import render
 from divulgar.models import Pet, Raca
 from django.contrib.auth.decorators import login_required
+from django.core.paginator import Paginator
 
 
 def adote(request):
@@ -11,6 +12,10 @@ def adote(request):
 
      cidade = request.GET.get('cidade')
      raca_filter = request.GET.get('raca')
+     
+     
+
+
     
-     return render(request, 'index.html',  {'pets': pets, 'racas': racas, 'cidade': cidade, 'raca_filter': raca_filter })
+     return render(request, 'index.html',  {'pets': pets, 'racas': racas, 'cidade': cidade, 'raca_filter': raca_filter,  })
 

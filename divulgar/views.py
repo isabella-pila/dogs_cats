@@ -78,17 +78,34 @@ def seus_pets(request):
 
 @login_required
 def remover_pet(request, id):
-    pet = Pet.objects.get(id=id)
-  
+    
+    
+
+    pet = Pet.objects.get(id=id, usuario=request.user)
+    pedido_adocao = PedidoAdocao.objects.filter(pet=pet)
+    if pedido_adocao:
+        pedido_adocao.delete()
+        
+    
     if not pet.usuario == request.user:
       messages.add_message(request, constants.ERROR, 'Esse pet não e seu, espertinho haha.')
       return redirect('/divulgar/seus_pets') 
+    
+    base_url = str(pet.foto)
+
+    a1= 'image/upload/v1678210063/'
+
+    url =  base_url.replace(a1,"")
+    image_url = url.split('.')[-1]
+
+    cloudinary.uploader.destroy(image_url)
+   
 
     pet.delete()
-
-    
+   
     messages.add_message(request, constants.SUCCESS, 'Removido com sucesso.')
     return redirect('/divulgar/seus_pets') 
+
 
 
 @login_required

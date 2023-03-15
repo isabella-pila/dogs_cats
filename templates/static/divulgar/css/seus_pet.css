@@ -5,13 +5,18 @@
  .tabela{
      width: 100%;
      margin-top: 20px;
-     
+     overflow-x: auto; 
+        
  }
+
+ td, th {
+    
+    padding: 8px;
+  }
  
  .tabela-linha{
      background-color: #e8e7e7;
 
-     
  }
 
  .letras{
@@ -27,10 +32,27 @@
      
     }
     .tabela{
-        width:100vw;
-      
+        
+        overflow-x: auto;
+        display: block;
+        width: 100%;
+        max-width: 100%;
+        border-collapse: collapse;
+        
     }
+
+        
+    th {
+        min-width: 100px; /* definir um tamanho mínimo para as células de cabeçalho */
+      }
+      
+      td {
+        white-space: nowrap; /* impede que as células da tabela sejam quebradas em várias linhas */
+      }
    
+
+
+          
 }
 
 
