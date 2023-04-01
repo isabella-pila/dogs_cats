@@ -1,0 +1,60 @@
+.width80{
+    width: 80vw; 
+ }
+ 
+ .tabela{
+     width: 100%;
+     margin-top: 20px;
+     overflow-x: auto; 
+        
+ }
+
+ td, th {
+    
+    padding: 8px;
+  }
+ 
+ .tabela-linha{
+     background-color: #e8e7e7;
+
+ }
+
+ .letras{
+    font-size:50px;
+    color:#000;
+}
+
+
+@media(max-width: 800px){
+
+    .width80{ 
+        width: 100vw;
+     
+    }
+    .tabela{
+        
+        overflow-x: auto;
+        display: block;
+        width: 100%;
+        max-width: 100%;
+        border-collapse: collapse;
+        
+    }
+
+        
+    th {
+        min-width: 100px; /* definir um tamanho mínimo para as células de cabeçalho */
+      }
+      
+      td {
+        white-space: nowrap; /* impede que as células da tabela sejam quebradas em várias linhas */
+      }
+   
+
+
+          
+}
+
+
+
+

@@ -412,6 +412,18 @@ nav li{
     opacity:1;
 }
 
+/*
+---------bug-----------
+
+*/
+#picapau{
+        position: absolute;
+        right: 10px;
+        bottom: 10px;
+}
+
+
+
 
 /*
     -------- CSS FOOTER --------
@@ -565,4 +577,13 @@ nav{
     font-size:20px;
     margin:5% ;
 }
+
+.headerSecListar{
+    height: 100vh;
+    width: 100%;
+    flex-direction: column;
+    font-family: calibri;
+    margin:5% ;
+}
+
 }

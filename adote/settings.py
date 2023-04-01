@@ -43,9 +43,10 @@ SECRET_KEY = 'django-insecure-d4cxisc^6_!19qr9fv$fc)+r7$e9=z!fe2zc-k70av7fp2+cr*
 
 
 # SECURITY WARNING: don't run with debug turned on in production!
-# DEBUG = True
+#DEBUG = True
 
-DEBUG = True
+DEBUG = False
+
 #'RENDER' not in os.environ
 
 ALLOWED_HOSTS = ['*']
@@ -113,10 +114,10 @@ WSGI_APPLICATION = 'adote.wsgi.application'
 DATABASES = {
    'default': {
        'ENGINE': 'django.db.backends.postgresql',
-       'NAME': 'ds_vendas',
-       'USER': 'admin',
-       'PASSWORD': 'JskMH1Mgrv9ubLQyn92uGO8FmLIGIuC9',
-       'HOST': 'dpg-cetcmfpa6gdut0opk240-a.oregon-postgres.render.com',
+       'NAME': 'adote',
+       'USER': 'isabella',
+       'PASSWORD': 'F8OlGOSqY44uVW3FwfowJvkftRvBwWkw',
+       'HOST': 'dpg-cgkb668rddleudtt5bp0-a.oregon-postgres.render.com',
        'PORT': '5432',
    }
 }
