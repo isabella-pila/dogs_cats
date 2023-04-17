@@ -8,6 +8,4 @@ urlpatterns= [
    path('',views.logar, name="login"),
    path('sair/', views.sair,name="sair"),
    
-   
-   
 ]

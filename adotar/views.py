@@ -11,6 +11,7 @@ from django.http import HttpResponse
 from django.core.paginator import Paginator
 from django.shortcuts import get_object_or_404
 
+
 @login_required
 
 
@@ -63,6 +64,9 @@ def pedido_adocao(request, id_pet):
 def erro(request, exception):
     return render(request, 'bug.html')
 
+
+def handler500(request):
+    return render(request, 'bug.html', status=500)
 
     
 

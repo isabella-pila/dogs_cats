@@ -5,6 +5,8 @@
     -------- CSS GERAL --------
 */
 
+
+
 html, body{
     margin: 0;
     padding: 0;
@@ -412,15 +414,6 @@ nav li{
     opacity:1;
 }
 
-/*
----------bug-----------
-
-*/
-#picapau{
-        position: absolute;
-        right: 10px;
-        bottom: 10px;
-}
 
 
 

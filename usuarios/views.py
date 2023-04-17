@@ -6,6 +6,7 @@ from django.contrib.messages import constants
 from django.contrib.auth import authenticate, login, logout
 from django.shortcuts import redirect
 
+
 def cadastro(request):
     if request.user.is_authenticated:
         return redirect('/adotar')
@@ -14,6 +15,7 @@ def cadastro(request):
     elif request.method == "POST":
         nome = request.POST.get('nome')
         email = request.POST.get('email')
+        
         senha = request.POST.get('senha')
         confirmar_senha = request.POST.get('confirmar_senha')
 
@@ -64,3 +66,6 @@ def logar(request):
 def sair(request):
     logout(request)
     return render(request, 'index.html')
+
+
+    
