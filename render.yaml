@@ -5,10 +5,10 @@ databases:
 
 services:
   - type: web
-    name: adote_ouah
+    name: adote
     env: python
     buildCommand: "./build.sh"
-    startCommand: "gunicorn adote.wsgi:application"
+    startCommand: "gunicorn adote.wsgi"
     envVars:
       - key: postgresql://adote_ouah_user:EUnPfrJTnvdYYj3v1xgEZQlWyRt9fDhW@dpg-ct6uvql6l47c738cqfug-a.oregon-postgres.render.com/adote_ouah
         fromDatabase:
