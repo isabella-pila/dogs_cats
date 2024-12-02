@@ -114,10 +114,10 @@ WSGI_APPLICATION = 'adote.wsgi.application'
 DATABASES = {
    'default': {
        'ENGINE': 'django.db.backends.postgresql',
-       'NAME': 'adote',
-       'USER': 'isabella',
-       'PASSWORD': 'F8OlGOSqY44uVW3FwfowJvkftRvBwWkw',
-       'HOST': 'dpg-cgkb668rddleudtt5bp0-a.oregon-postgres.render.com',
+       'NAME': 'adote_ouah',
+       'USER': 'adote_ouah_user',
+       'PASSWORD': 'EUnPfrJTnvdYYj3v1xgEZQlWyRt9fDhW',
+       'HOST': 'dpg-ct6uvql6l47c738cqfug-a.oregon-postgres.render.com',
        'PORT': '5432',
    }
 }
