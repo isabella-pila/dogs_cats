@@ -8,9 +8,9 @@ services:
     name: adote
     env: python
     buildCommand: "./build.sh"
-    startCommand: "gunicorn adote.wsgi"
+    startCommand: "gunicorn adote.wsgi:application"
     envVars:
-      - key: postgresql://adote_ouah_user:EUnPfrJTnvdYYj3v1xgEZQlWyRt9fDhW@dpg-ct6uvql6l47c738cqfug-a.oregon-postgres.render.com/adote_ouah
+      - key: postgresql://adote_ouah_user:EUnPfrJTnvdYYj3v17xgEZQlWyRt9fDhW@dpg-ct6uvql6l47c738cqfug-a.oregon-postgres.render.com/adote_ouah 1 
         fromDatabase:
           name: adote_ouah
           property: connectionString
