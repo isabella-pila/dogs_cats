@@ -13,6 +13,7 @@ gunicorn = "^20.1.0"
 cloudinary = "^1.41.0"
 psycopg2 = "^2.9.10"
 whitenoise = "^6.8.2"
+app = "^0.0.1"
 
 
 [build-system]
