@@ -9,6 +9,7 @@ https://docs.djangoproject.com/en/4.1/topics/settings/
 For the full list of settings and their values, see
 https://docs.djangoproject.com/en/4.1/ref/settings/
 """
+import app
 
 from pathlib import Path
 import os
@@ -45,7 +46,7 @@ SECRET_KEY = 'django-insecure-d4cxisc^6_!19qr9fv$fc)+r7$e9=z!fe2zc-k70av7fp2+cr*
 # SECURITY WARNING: don't run with debug turned on in production!
 #DEBUG = True
 
-DEBUG = False
+DEBUG = True
 
 #'RENDER' not in os.environ
 
@@ -67,6 +68,7 @@ INSTALLED_APPS = [
     'usuarios',
     'divulgar',
     'adotar',
+    'app',
 ]
 
 MIDDLEWARE = [
@@ -114,10 +116,10 @@ WSGI_APPLICATION = 'adote.wsgi.application'
 DATABASES = {
    'default': {
        'ENGINE': 'django.db.backends.postgresql',
-       'NAME': 'adote',
-       'USER': 'isabella',
-       'PASSWORD': 'F8OlGOSqY44uVW3FwfowJvkftRvBwWkw',
-       'HOST': 'dpg-cgkb668rddleudtt5bp0-a.oregon-postgres.render.com',
+       'NAME': 'adote_ouah',
+       'USER': 'adote_ouah_user',
+       'PASSWORD': 'EUnPfrJTnvdYYj3v1xgEZQlWyRt9fDhW',
+       'HOST': 'dpg-ct6uvql6l47c738cqfug-a.oregon-postgres.render.com',
        'PORT': '5432',
    }
 }

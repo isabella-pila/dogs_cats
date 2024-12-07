@@ -1,7 +1,7 @@
 databases:
-  - name: ds_vendas
-    databaseName: ds_vendas
-    user: admin
+  - name: adote
+    databaseName: adote_ouah
+    user: adote_ouah_user
 
 services:
   - type: web
@@ -10,9 +10,9 @@ services:
     buildCommand: "./build.sh"
     startCommand: "gunicorn adote.wsgi:application"
     envVars:
-      - key: postgres://admin:JskMH1Mgrv9ubLQyn92uGO8FmLIGIuC9@dpg-cetcmfpa6gdut0opk240-a/ds_vendas
+      - key: postgresql://adote_ouah_user:EUnPfrJTnvdYYj3v17xgEZQlWyRt9fDhW@dpg-ct6uvql6l47c738cqfug-a.oregon-postgres.render.com/adote_ouah 1 
         fromDatabase:
-          name: adote
+          name: adote_ouah
           property: connectionString
       - key: SECRET_KEY
         generateValue: true
